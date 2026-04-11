@@ -1,0 +1,223 @@
+:root {
+  --bg: #101820;
+  --bg-accent: #17313e;
+  --panel: rgba(9, 18, 28, 0.82);
+  --panel-strong: rgba(7, 12, 20, 0.96);
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #f8f1d7;
+  --muted: #c8d2c7;
+  --gold: #ffc857;
+  --coral: #ff6b4a;
+  --mint: #79f2c0;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(255, 200, 87, 0.22), transparent 28%),
+    radial-gradient(circle at 20% 20%, rgba(121, 242, 192, 0.12), transparent 30%),
+    linear-gradient(145deg, var(--bg) 0%, var(--bg-accent) 48%, #091017 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 90%);
+}
+
+.app-shell {
+  width: min(980px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.hero {
+  padding: 1rem 0 1.5rem;
+}
+
+.eyebrow,
+.panel-label {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--mint);
+}
+
+h1 {
+  margin: 0.4rem 0;
+  font-family: "Abril Fatface", serif;
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  line-height: 0.95;
+  color: var(--gold);
+}
+
+.tagline {
+  max-width: 40rem;
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.machine {
+  position: relative;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 24%),
+    var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.machine-top,
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.panel-value,
+.stat-number {
+  margin: 0.3rem 0 0;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.4rem 0;
+}
+
+.reel-frame,
+.stat-card,
+.message-board {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--panel-strong);
+}
+
+.reel-frame {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.reel-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 20%, transparent 80%, rgba(255, 255, 255, 0.05));
+  pointer-events: none;
+}
+
+.reel {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-size: clamp(4rem, 12vw, 6.5rem);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.reel.spinning {
+  animation: tumble 180ms linear infinite;
+  filter: blur(1px);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.spin-button {
+  flex: 1 1 240px;
+  padding: 1rem 1.4rem;
+  font-weight: 700;
+  color: #1f1600;
+  background: linear-gradient(135deg, var(--gold), #ffe5a9);
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.12);
+}
+
+.utility-button {
+  padding: 1rem 1.3rem;
+  color: var(--text);
+  background: rgba(255, 107, 74, 0.16);
+  border: 1px solid rgba(255, 107, 74, 0.35);
+}
+
+.stat-card,
+.message-board {
+  padding: 1rem;
+}
+
+.message-board {
+  margin-top: 1.4rem;
+}
+
+#messageText {
+  margin: 0.7rem 0 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.machine.win {
+  box-shadow: 0 0 0 2px rgba(121, 242, 192, 0.35), 0 24px 80px rgba(121, 242, 192, 0.22);
+}
+
+.machine.jackpot {
+  box-shadow: 0 0 0 2px rgba(255, 200, 87, 0.4), 0 28px 90px rgba(255, 200, 87, 0.28);
+}
+
+@keyframes tumble {
+  from {
+    transform: translateY(-6px) scale(1.01);
+  }
+
+  to {
+    transform: translateY(6px) scale(0.99);
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    width: min(100% - 1rem, 980px);
+    padding-top: 1rem;
+  }
+
+  .machine-top,
+  .stats,
+  .reels {
+    grid-template-columns: 1fr;
+  }
+
+  .reel-frame {
+    min-height: 150px;
+  }
+}

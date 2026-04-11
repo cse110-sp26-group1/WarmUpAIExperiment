@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tumbler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Silicon Carnival Presents</p>
+      <h1>Token Tumbler</h1>
+      <p class="tagline">Win fake AI riches. Spend them immediately on even faker intelligence.</p>
+    </section>
+
+    <section class="machine" aria-label="AI satire slot machine">
+      <div class="machine-top">
+        <div>
+          <p class="panel-label">Wallet</p>
+          <p class="panel-value"><span id="tokenCount">120</span> tokens</p>
+        </div>
+        <div>
+          <p class="panel-label">Spin Cost</p>
+          <p class="panel-value">15 tokens</p>
+        </div>
+        <div>
+          <p class="panel-label">Last Payout</p>
+          <p class="panel-value"><span id="lastPayout">0</span> tokens</p>
+        </div>
+      </div>
+
+      <div class="reels" role="group" aria-label="Slot reels">
+        <div class="reel-frame">
+          <div class="reel" id="reel0" aria-live="polite">🤖</div>
+        </div>
+        <div class="reel-frame">
+          <div class="reel" id="reel1" aria-live="polite">💸</div>
+        </div>
+        <div class="reel-frame">
+          <div class="reel" id="reel2" aria-live="polite">🪙</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spinButton" class="spin-button" type="button">Spin For Compute</button>
+        <button id="resetButton" class="utility-button" type="button">Panic Reset</button>
+      </div>
+
+      <div class="stats">
+        <article class="stat-card">
+          <p class="panel-label">Total Spins</p>
+          <p class="stat-number" id="spinCount">0</p>
+        </article>
+        <article class="stat-card">
+          <p class="panel-label">Jackpots</p>
+          <p class="stat-number" id="jackpotCount">0</p>
+        </article>
+        <article class="stat-card">
+          <p class="panel-label">Spent On Hype</p>
+          <p class="stat-number" id="spentCount">0</p>
+        </article>
+      </div>
+
+      <section class="message-board" aria-live="polite">
+        <p class="panel-label">Model Output</p>
+        <p id="messageText">Insert tokens and let the machine hallucinate value.</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
