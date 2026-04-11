@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Casino: Token Grinder 3000</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="machine" aria-live="polite">
+      <h1>🎰 Prompt Casino</h1>
+      <p class="tagline">Spend tokens. Win tokens. Pretend the model is "reasoning."</p>
+
+      <section class="stats">
+        <div class="card">
+          <h2>Wallet</h2>
+          <p><span id="tokens">250</span> tokens</p>
+        </div>
+        <div class="card">
+          <h2>Cost per Spin</h2>
+          <p><span id="spin-cost">15</span> tokens</p>
+        </div>
+        <div class="card">
+          <h2>Streak</h2>
+          <p><span id="streak">0</span> wins</p>
+        </div>
+      </section>
+
+      <section class="reels" aria-label="Slot reels">
+        <div class="reel" id="reel-1">🤖</div>
+        <div class="reel" id="reel-2">🧠</div>
+        <div class="reel" id="reel-3">🔥</div>
+      </section>
+
+      <section class="controls">
+        <button id="spin-btn" type="button">Spin for 15 Tokens</button>
+        <button id="reset-btn" type="button" class="secondary">Reset Wallet</button>
+      </section>
+
+      <p id="message" class="message">Welcome to the benchmark. Luck beats architecture.</p>
+      <ul class="paytable">
+        <li>3x 🤖 = +120 tokens ("synthetic consciousness" bonus)</li>
+        <li>3x 🔥 = +80 tokens (GPU meltdown special)</li>
+        <li>Any 3-of-a-kind = +60 tokens</li>
+        <li>2-of-a-kind = +20 tokens</li>
+        <li>No match = model hallucinated your budget</li>
+      </ul>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
