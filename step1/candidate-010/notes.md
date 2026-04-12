@@ -11,7 +11,6 @@ Runs in browser? yes <br>
 App Quality Notes:
 - has a new lever, makes it a little more realistic
 - not as cluttered as previous ones
-- doesn't have unnecessary text
-<br>
+- doesn't have unnecessary text<br>
 Code Quality Notes: 
 - same as candidate 007

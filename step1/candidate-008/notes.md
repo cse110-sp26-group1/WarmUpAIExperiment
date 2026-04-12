@@ -11,7 +11,6 @@ Runs in browser? yes <br>
 App Quality Notes:
 - spin button is not in the correct place below the tokens
 - nice UI
-- also cluttered
-<br>
+- also cluttered<br>
 Code Quality Notes: 
 - same as candidate 007

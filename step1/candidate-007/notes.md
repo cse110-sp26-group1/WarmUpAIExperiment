@@ -11,8 +11,7 @@ Runs in browser? yes <br>
 App Quality Notes:
 - good functionality
 - too much clutter with sections, text and emoji
-- unnecessary headline on top, the last news for some reason comes to the front
-<br>
+- unnecessary headline on top, the last news for some reason comes to the front<br>
 Code Quality Notes: 
 -  nice indentation
 -  no comments

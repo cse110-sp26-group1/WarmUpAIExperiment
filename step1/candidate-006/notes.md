@@ -11,8 +11,7 @@ Runs in browser? yes <br>
 App Quality Notes:
 - good UI, looks pretty advanced
 - doesn't show which tokens matched, blanks out
-- very casual
-<br>
+- very casual<br>
 Code Quality Notes: 
 - nice indentation
 - zero documentation

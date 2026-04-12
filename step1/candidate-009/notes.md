@@ -11,7 +11,6 @@ Runs in browser? yes <br>
 App Quality Notes:
 -   too much text that is capitalized and bolded
 -   good functionality
--   unnecessary casino things projected as headlines at the top
-<br>
+-   unnecessary casino things projected as headlines at the top<br>
 Code Quality Notes: 
 - same as candidate 007
