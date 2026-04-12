@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tugger 3000</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-glow" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">vanilla web slot machine</p>
+        <h1>Token Tugger 3000</h1>
+        <p class="hero-copy">
+          Pull the lever, burn your precious AI tokens, and pray the model gives
+          something back besides latency and hallucinations.
+        </p>
+      </section>
+
+      <section class="dashboard" aria-label="Scoreboard">
+        <article class="stat-card">
+          <p class="stat-label">Wallet</p>
+          <p class="stat-value" id="walletTokens">250</p>
+          <p class="stat-note">tokens left for your next "quick question"</p>
+        </article>
+
+        <article class="stat-card">
+          <p class="stat-label">Spent</p>
+          <p class="stat-value" id="tokensSpent">0</p>
+          <p class="stat-note">obliterated by context-window inflation</p>
+        </article>
+
+        <article class="stat-card">
+          <p class="stat-label">Streak</p>
+          <p class="stat-value" id="winStreak">0</p>
+          <p class="stat-note">consecutive non-embarrassing outputs</p>
+        </article>
+
+        <article class="stat-card">
+          <p class="stat-label">Model Mood</p>
+          <p class="stat-value stat-value-small" id="modelMood">skeptical</p>
+          <p class="stat-note">derived from vibes, not benchmarks</p>
+        </article>
+      </section>
+
+      <section class="machine-frame" aria-labelledby="machineLabel">
+        <div class="marquee-lights" aria-hidden="true"></div>
+
+        <div class="machine-top">
+          <div>
+            <p class="machine-tag">Prompt Casino</p>
+            <h2 id="machineLabel">Three reels. Infinite token regret.</h2>
+          </div>
+
+          <div class="chip-row">
+            <span class="chip">Spin cost: <strong>25</strong></span>
+            <span class="chip">Jackpots: <strong id="jackpotCount">0</strong></span>
+            <span class="chip">Spins: <strong id="spinCount">0</strong></span>
+          </div>
+        </div>
+
+        <div class="machine-body">
+          <section class="reel-panel" aria-label="Slot machine reels">
+            <div class="reels" role="img" aria-label="Three slot reels">
+              <div class="reel-window">
+                <div class="reel-symbol" id="reel0">TOKEN</div>
+              </div>
+              <div class="reel-window">
+                <div class="reel-symbol" id="reel1">PROMPT</div>
+              </div>
+              <div class="reel-window">
+                <div class="reel-symbol" id="reel2">GPU</div>
+              </div>
+            </div>
+
+            <div class="result-panel">
+              <p class="result-label">Announcer</p>
+              <p class="result-text" id="resultText">
+                Insert confidence. Receive probabilistic entertainment.
+              </p>
+            </div>
+          </section>
+
+          <aside class="control-panel">
+            <div class="lever-wrap" aria-hidden="true">
+              <div class="lever-track"></div>
+              <div class="lever-knob" id="leverKnob"></div>
+            </div>
+
+            <button class="button button-primary" id="spinButton" type="button">
+              Pull Lever
+            </button>
+            <button class="button" id="shareButton" type="button">
+              Share Brag
+            </button>
+            <button class="button" id="muteButton" type="button">
+              Sound On
+            </button>
+            <button class="button button-subtle" id="resetButton" type="button">
+              Reset Wallet
+            </button>
+
+            <div class="api-strip">
+              <span>localStorage</span>
+              <span>Web Audio</span>
+              <span>Vibration</span>
+              <span>Web Share</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="panel">
+          <h3>Payout Table</h3>
+          <ul class="payout-list">
+            <li><strong>TOKEN TOKEN TOKEN</strong> +120 for raw model greed</li>
+            <li><strong>GPU GPU GPU</strong> +300 because cloud credits appeared</li>
+            <li><strong>PROMPT PROMPT PROMPT</strong> +90 from elegant wording alone</li>
+            <li><strong>AGENT AGENT AGENT</strong> +140 after delegating your chores</li>
+            <li><strong>Any pair</strong> +35 for acceptable autocomplete</li>
+            <li><strong>One HALLU</strong> 0 because the citation was imaginary</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h3>Recent Damage</h3>
+          <ol class="history-list" id="historyList">
+            <li>Fresh machine booted. Wallet topped up with 250 tokens.</li>
+          </ol>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

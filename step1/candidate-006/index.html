@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burner 9000</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Synthetic luck, organic disappointment</p>
+        <h1>Token Burner 9000</h1>
+        <p class="hero-copy">
+          Feed the machine prompt tokens. If the reels align, it rewards you
+          with even more tokens and a deeply unserious AI prophecy.
+        </p>
+      </header>
+
+      <main class="machine" aria-label="AI satire slot machine">
+        <section class="status-panel">
+          <div class="status-card">
+            <span class="status-label">Wallet</span>
+            <strong class="status-value" id="tokenCount">40</strong>
+            <span class="status-note">Prompt tokens left to burn</span>
+          </div>
+          <div class="status-card">
+            <span class="status-label">Best Run</span>
+            <strong class="status-value" id="bestRun">40</strong>
+            <span class="status-note">Peak fake productivity</span>
+          </div>
+          <div class="status-card">
+            <span class="status-label">Spin Count</span>
+            <strong class="status-value" id="spinCount">0</strong>
+            <span class="status-note">Each spin costs 3 tokens</span>
+          </div>
+          <div class="status-card">
+            <span class="status-label">Machine Mood</span>
+            <strong class="status-value" id="machineMood">Smug</strong>
+            <span class="status-note">Calibrated by your recent luck</span>
+          </div>
+        </section>
+
+        <section class="slot-panel">
+          <div class="marquee">
+            <span id="marqueeText">Welcome back. The machine has pre-read your intent.</span>
+          </div>
+
+          <div class="machine-face">
+            <div class="reels" aria-live="polite" aria-label="Slot machine reels">
+              <div class="reel-window">
+                <div class="reel-track" id="reel0"></div>
+              </div>
+              <div class="reel-window">
+                <div class="reel-track" id="reel1"></div>
+              </div>
+              <div class="reel-window">
+                <div class="reel-track" id="reel2"></div>
+              </div>
+            </div>
+
+            <div class="token-meter">
+              <div class="token-meter__label">
+                <span>Context Window Saturation</span>
+                <span id="meterLabel">40 / 120</span>
+              </div>
+              <div class="token-meter__track">
+                <div class="token-meter__fill" id="meterFill"></div>
+              </div>
+            </div>
+
+            <div class="controls">
+              <button class="button spin-button" id="spinButton" type="button">
+                Spin For 3 Tokens
+              </button>
+              <button class="button secondary-button" id="bailoutButton" type="button">
+                Beg VC For Credits
+              </button>
+            </div>
+
+            <p class="message" id="message">
+              Pull the lever and let the machine hallucinate value.
+            </p>
+          </div>
+        </section>
+
+        <section class="dashboard">
+          <article class="panel">
+            <div class="panel-heading">
+              <h2>Recent Hype</h2>
+              <span>Last 5 outcomes</span>
+            </div>
+            <ul class="log-list" id="logList"></ul>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <h2>Paytable</h2>
+              <span>What the machine claims is fair</span>
+            </div>
+            <div class="paytable" id="paytable"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

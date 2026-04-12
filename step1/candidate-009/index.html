@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Token Casino</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="marquee" aria-label="Headline">
+        <p>AI TOKEN CASINO</p>
+        <p>SPEND TOKENS TO WIN TOKENS TO SPEND TOKENS TO FEEL SOMETHING</p>
+      </section>
+
+      <section class="machine" aria-labelledby="app-title">
+        <div class="machine__glow" aria-hidden="true"></div>
+
+        <header class="hero">
+          <div>
+            <p class="eyebrow">Synthetic Joy Division</p>
+            <h1 id="app-title">Pull the lever. Feed the model.</h1>
+          </div>
+          <p class="hero-copy">
+            Every spin burns context tokens and prays for a miracle. It is,
+            spiritually, how half the AI industry already works.
+          </p>
+        </header>
+
+        <section class="scoreboard" aria-label="Token stats">
+          <article class="stat">
+            <span class="stat__label">Wallet</span>
+            <strong class="stat__value" id="token-balance">0</strong>
+          </article>
+          <article class="stat">
+            <span class="stat__label">Spent</span>
+            <strong class="stat__value" id="tokens-spent">0</strong>
+          </article>
+          <article class="stat">
+            <span class="stat__label">Peak Delusion</span>
+            <strong class="stat__value" id="best-balance">0</strong>
+          </article>
+          <article class="stat">
+            <span class="stat__label">Last Payout</span>
+            <strong class="stat__value" id="last-win">0</strong>
+          </article>
+        </section>
+
+        <section class="play-area" aria-labelledby="reels-title">
+          <div class="play-area__topline">
+            <div>
+              <p class="eyebrow">Inference Engine</p>
+              <h2 id="reels-title">Prompt the slots</h2>
+            </div>
+            <div class="chip-stack">
+              <span class="chip">Spin Cost: <strong id="spin-cost">15</strong></span>
+              <span class="chip">Session Spins: <strong id="spin-count">0</strong></span>
+            </div>
+          </div>
+
+          <div class="machine-face">
+            <div class="payline payline--top" aria-hidden="true"></div>
+            <div class="payline payline--bottom" aria-hidden="true"></div>
+
+            <div class="reels" role="img" aria-label="Slot machine reels">
+              <article class="reel" data-reel="0">
+                <span class="reel__label">BOOTING</span>
+              </article>
+              <article class="reel" data-reel="1">
+                <span class="reel__label">MODEL</span>
+              </article>
+              <article class="reel" data-reel="2">
+                <span class="reel__label">CHAOS</span>
+              </article>
+            </div>
+          </div>
+
+          <section class="controls" aria-label="Game controls">
+            <button class="button button--primary" id="spin-button" type="button">
+              Spend Tokens
+            </button>
+            <button class="button button--ghost" id="bailout-button" type="button">
+              Beg Venture Capital
+            </button>
+            <button class="button button--ghost" id="sound-button" type="button" aria-pressed="true">
+              Sound: On
+            </button>
+          </section>
+        </section>
+
+        <section class="message-panel">
+          <div>
+            <p class="eyebrow">Model Output</p>
+            <p class="message" id="message" aria-live="polite">
+              You have been pre-approved for reckless inference.
+            </p>
+          </div>
+          <div class="session-note" id="session-note">
+            Latest forecast: irrational confidence with a 98% chance of buzzwords.
+          </div>
+        </section>
+
+        <section class="payouts" aria-labelledby="payouts-title">
+          <div class="payouts__header">
+            <div>
+              <p class="eyebrow">Reward Model</p>
+              <h2 id="payouts-title">Payout table</h2>
+            </div>
+            <p class="payouts__copy">
+              Triple matches pay out. Some symbols represent success, others represent
+              the average product roadmap.
+            </p>
+          </div>
+
+          <div class="payout-grid" id="payout-grid"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

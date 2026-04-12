@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A playful vanilla web slot machine where you win prompt tokens and waste them on ridiculous AI upgrades."
+    >
+    <title>Token Tilt</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page-noise" aria-hidden="true"></div>
+    <main class="shell">
+      <section class="hero card">
+        <p class="eyebrow">Prompt Casino / Synthetic Luck Engine</p>
+        <h1>Token Tilt</h1>
+        <p class="lede">
+          Spin for prompt tokens, then burn them on premium AI nonsense like
+          hallucination insurance and a context window that swears it remembers you.
+        </p>
+        <div class="hero-actions">
+          <button id="spinButton" class="button button-primary" type="button">
+            Spin for 12 Tokens
+          </button>
+          <button id="bailoutButton" class="button button-secondary" type="button">
+            Pitch Deck Bailout
+          </button>
+          <button id="aboutButton" class="button button-ghost" type="button">
+            How This Scam Works
+          </button>
+        </div>
+        <div class="hero-strip">
+          <div>
+            <span class="strip-label">House motto</span>
+            <strong>Every answer costs a little dignity.</strong>
+          </div>
+          <div>
+            <span class="strip-label">Gameplay</span>
+            <strong>Win tokens. Spend tokens. Pretend it is innovation.</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="machine card" id="machine">
+        <div class="machine-top">
+          <div class="bank">
+            <span class="bank-label">Wallet</span>
+            <strong id="tokenCount" class="bank-value">120</strong>
+            <small>prompt tokens</small>
+          </div>
+          <div class="bank">
+            <span class="bank-label">Best Hit</span>
+            <strong id="bestWin" class="bank-value">0</strong>
+            <small>single payout</small>
+          </div>
+          <div class="bank bank-status">
+            <span class="bank-label">Status</span>
+            <strong id="statusText" class="status-text">Booting the irony engine.</strong>
+            <small id="statusSubtext">Luck is generated locally.</small>
+          </div>
+        </div>
+
+        <div class="machine-stage">
+          <div class="machine-glow" aria-hidden="true"></div>
+          <div class="reels" aria-live="polite" aria-label="Slot machine reels">
+            <div class="reel-window">
+              <div class="reel" id="reel0" data-symbol="TOKEN">TOKEN</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel" id="reel1" data-symbol="BOT">BOT</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel" id="reel2" data-symbol="CACHE">CACHE</div>
+            </div>
+          </div>
+          <div class="payout-bar">
+            <span>3 TOKEN = 64</span>
+            <span>3 CACHE = 42</span>
+            <span>2 TOKEN = 20</span>
+            <span>BOT + GPU + PROMPT = 26</span>
+          </div>
+        </div>
+
+        <div class="machine-footer">
+          <div class="stat-chip">
+            <span>Spins</span>
+            <strong id="spinCount">0</strong>
+          </div>
+          <div class="stat-chip">
+            <span>Total Won</span>
+            <strong id="totalWon">0</strong>
+          </div>
+          <div class="stat-chip">
+            <span>Total Burned</span>
+            <strong id="totalSpent">0</strong>
+          </div>
+          <div class="stat-chip">
+            <span>Active Buffs</span>
+            <strong id="buffSummary">None</strong>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="card shop">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Token Sink</p>
+              <h2>Spend It On AI Upgrades</h2>
+            </div>
+            <p class="small-copy">Each purchase is useful in the same way a keynote deck is useful.</p>
+          </div>
+          <div class="shop-grid" id="shopGrid">
+            <article class="shop-card" data-upgrade="insurance">
+              <p class="shop-cost">18 tokens</p>
+              <h3>Hallucination Insurance</h3>
+              <p>Refunds 6 tokens on your next losing spin, because confidence was never accuracy.</p>
+              <button class="button button-secondary buy-button" data-upgrade="insurance" type="button">
+                Buy Safety Theater
+              </button>
+            </article>
+            <article class="shop-card" data-upgrade="reroll">
+              <p class="shop-cost">24 tokens</p>
+              <h3>Context Window Stretch</h3>
+              <p>Quietly rerolls your next weak spin and acts like it remembered your intent all along.</p>
+              <button class="button button-secondary buy-button" data-upgrade="reroll" type="button">
+                Buy More Memory
+              </button>
+            </article>
+            <article class="shop-card" data-upgrade="bonus">
+              <p class="shop-cost">16 tokens</p>
+              <h3>Vibe-Coded Autocomplete</h3>
+              <p>Adds 8 bonus tokens to your next win, straight from the department of shipping first.</p>
+              <button class="button button-secondary buy-button" data-upgrade="bonus" type="button">
+                Buy Pure Momentum
+              </button>
+            </article>
+          </div>
+        </section>
+
+        <section class="card telemetry">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Telemetry</p>
+              <h2>Model Mood</h2>
+            </div>
+            <p class="small-copy">Numbers are real enough to look expensive.</p>
+          </div>
+          <div class="meter-card">
+            <div class="meter-copy">
+              <span>Confidence meter</span>
+              <strong id="confidenceLabel">39% sure this is intelligence</strong>
+            </div>
+            <div class="meter-track" aria-hidden="true">
+              <div id="confidenceBar" class="meter-fill"></div>
+            </div>
+          </div>
+          <div class="log-panel">
+            <div class="log-header">
+              <h3>Feed</h3>
+              <button id="resetButton" class="button button-ghost button-small" type="button">
+                Reset Run
+              </button>
+            </div>
+            <ul id="eventLog" class="event-log" aria-live="polite"></ul>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <dialog id="aboutDialog" class="about-dialog">
+      <form method="dialog" class="dialog-shell">
+        <div class="dialog-copy">
+          <p class="eyebrow">House Rules</p>
+          <h2>How Token Tilt Works</h2>
+          <p>
+            Every spin costs 12 prompt tokens. Match symbols to win more, then
+            spend your profits on little AI upgrades that are suspiciously close
+            to product marketing.
+          </p>
+          <p>
+            The app is plain HTML, CSS, and JavaScript, with a few browser APIs:
+            local storage saves your run, Web Audio adds tiny synth bleeps, the
+            vibration API gives wins some punch, and this panel uses the dialog
+            element directly.
+          </p>
+        </div>
+        <div class="dialog-actions">
+          <button class="button button-primary" type="submit">Back To The Slot Machine</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
