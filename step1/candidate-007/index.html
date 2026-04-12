@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#12070b" />
+    <title>Token Laundromat</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">Vanilla web casino for the post-prompt economy</p>
+        <h1>Token Laundromat</h1>
+        <p class="subtitle">
+          Spend fake AI tokens on a slot machine that treats burned budget,
+          benchmark hype, and suspiciously confident nonsense as valid business
+          outcomes.
+        </p>
+        <div class="ticker" aria-label="House alerts">
+          <span>House model: extremely overfit</span>
+          <span>GPU rent due every 6 seconds</span>
+          <span>All jackpots are audited by vibes</span>
+          <span>Prompt engineers enter free before noon</span>
+        </div>
+      </header>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="machine-halo" aria-hidden="true"></div>
+
+        <div class="machine-grid">
+          <section class="status-grid" aria-label="Game status">
+            <article class="stat-card">
+              <span class="stat-label">Wallet</span>
+              <strong id="balance" class="stat-value">180</strong>
+              <span class="stat-copy">tokens available</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Current Spend</span>
+              <strong id="current-bet" class="stat-value">10</strong>
+              <span class="stat-copy">tokens per spin</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Last Payout</span>
+              <strong id="payout" class="stat-value">0</strong>
+              <span class="stat-copy">tokens recovered</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Hot Streak</span>
+              <strong id="streak" class="stat-value">0</strong>
+              <span class="stat-copy">wins in a row</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Spin Count</span>
+              <strong id="spins" class="stat-value">0</strong>
+              <span class="stat-copy">prompts launched</span>
+            </article>
+          </section>
+
+          <aside class="briefing-card" aria-live="polite">
+            <p class="panel-kicker">House Briefing</p>
+            <h2 id="headline">
+              Model mood: cautiously profitable nonsense.
+            </h2>
+            <p class="briefing-copy">
+              Every pull buys compute, confidence, and a fresh chance to confuse
+              correlation with intelligence.
+            </p>
+          </aside>
+
+          <section class="bet-panel" aria-label="Bet controls">
+            <div class="panel-heading">
+              <p class="panel-kicker">Spend Tokens</p>
+              <h2>Choose how irresponsible this prompt should be.</h2>
+            </div>
+            <div class="bet-buttons" role="group" aria-label="Bet amount">
+              <button
+                class="bet-chip is-active"
+                type="button"
+                data-bet="10"
+                aria-pressed="true"
+              >
+                10 token ping
+              </button>
+              <button
+                class="bet-chip"
+                type="button"
+                data-bet="25"
+                aria-pressed="false"
+              >
+                25 token demo
+              </button>
+              <button
+                class="bet-chip"
+                type="button"
+                data-bet="40"
+                aria-pressed="false"
+              >
+                40 token moonshot
+              </button>
+            </div>
+          </section>
+
+          <section class="reel-stage" aria-label="Machine stage">
+            <div class="reels" role="group" aria-label="Slot machine reels">
+              <article class="reel-frame">
+                <span class="reel-title">Training Set</span>
+                <div class="reel-window">
+                  <div class="reel-symbol" id="reel-0" aria-live="polite">
+                    🧠
+                  </div>
+                </div>
+                <p class="reel-caption" id="caption-0">alignment deck</p>
+              </article>
+
+              <article class="reel-frame">
+                <span class="reel-title">Prompt</span>
+                <div class="reel-window">
+                  <div class="reel-symbol" id="reel-1" aria-live="polite">
+                    🪙
+                  </div>
+                </div>
+                <p class="reel-caption" id="caption-1">premium token</p>
+              </article>
+
+              <article class="reel-frame">
+                <span class="reel-title">Output</span>
+                <div class="reel-window">
+                  <div class="reel-symbol" id="reel-2" aria-live="polite">
+                    🔥
+                  </div>
+                </div>
+                <p class="reel-caption" id="caption-2">launch thread</p>
+              </article>
+            </div>
+
+            <div class="controls">
+              <button id="spin-button" class="spin-button" type="button">
+                Spin The Hype Cycle
+              </button>
+              <button id="reset-button" class="ghost-button" type="button">
+                Refill Wallet
+              </button>
+            </div>
+
+            <p id="message" class="message" aria-live="polite">
+              The floor is open. Please gamble responsibly with fake AI money.
+            </p>
+          </section>
+
+          <section class="panel feed-panel" aria-label="Recent machine commentary">
+            <div class="panel-heading">
+              <p class="panel-kicker">Investor Feed</p>
+              <h2>Latest excuses from the machine</h2>
+            </div>
+            <ul id="feed" class="feed-list"></ul>
+          </section>
+
+          <section class="panel payout-panel" aria-label="Payout rules">
+            <div class="panel-heading">
+              <p class="panel-kicker">Payout Table</p>
+              <h2>How the house pretends this is merit-based</h2>
+            </div>
+            <div class="payout-grid">
+              <article class="payout-card">
+                <strong>🧠 🧠 🧠</strong>
+                <span>Alignment summit</span>
+                <p>Pays 12x because the model cited a real source by accident.</p>
+              </article>
+              <article class="payout-card">
+                <strong>💸 💸 💸</strong>
+                <span>Token bonfire</span>
+                <p>Pays 10x because investors still confuse burn with momentum.</p>
+              </article>
+              <article class="payout-card">
+                <strong>📈 🔥 💸</strong>
+                <span>Series A mirage</span>
+                <p>Pays 4x if growth, hype, and cash burn align in one spin.</p>
+              </article>
+              <article class="payout-card">
+                <strong>Any pair</strong>
+                <span>Demo-day refund</span>
+                <p>Pays 2x, or 3x if a premium token is part of the match.</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,440 @@
+:root {
+  --bg-top: #0f1735;
+  --bg-bottom: #04101e;
+  --panel: rgba(10, 16, 33, 0.82);
+  --panel-strong: rgba(17, 24, 49, 0.96);
+  --line: rgba(125, 214, 255, 0.24);
+  --text: #eef6ff;
+  --muted: #9eb0c9;
+  --gold: #ffcd57;
+  --salmon: #ff7c69;
+  --teal: #64f3d4;
+  --blue: #89b9ff;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(100, 243, 212, 0.14), transparent 30%),
+    radial-gradient(circle at 85% 20%, rgba(255, 124, 105, 0.16), transparent 25%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 92%);
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 64px;
+}
+
+.hero {
+  padding: 20px 0 24px;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: rise-in 0.7s 0.08s ease forwards;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.86rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: clamp(3rem, 9vw, 5.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.hero-copy {
+  max-width: 620px;
+  margin: 18px 0 0;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.machine {
+  display: grid;
+  gap: 22px;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: rise-in 0.8s 0.2s ease forwards;
+}
+
+.status-panel {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.status-card,
+.panel,
+.machine-face {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.status-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.status-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -55% auto;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 205, 87, 0.2), transparent 68%);
+}
+
+.status-label,
+.status-note,
+.panel-heading span,
+.marquee,
+.token-meter__label,
+.paytable-item small,
+.log-list li span {
+  color: var(--muted);
+}
+
+.status-label,
+.panel-heading span,
+.token-meter__label,
+.paytable-item small {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+}
+
+.status-value {
+  display: block;
+  margin-top: 10px;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+}
+
+.status-note {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.slot-panel {
+  display: grid;
+  gap: 0;
+}
+
+.marquee {
+  padding: 14px 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px 20px 0 0;
+  background: rgba(4, 10, 24, 0.78);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.76rem;
+}
+
+.machine-face {
+  border-radius: 0 0 28px 28px;
+  padding: 28px;
+  background:
+    linear-gradient(160deg, rgba(14, 21, 44, 0.96), rgba(5, 11, 26, 0.96)),
+    var(--panel-strong);
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.reel-window {
+  position: relative;
+  height: 228px;
+  overflow: hidden;
+  border-radius: 22px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 18%),
+    rgba(3, 9, 23, 0.95);
+}
+
+.reel-window::before,
+.reel-window::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 42px;
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.reel-window::before {
+  top: 12px;
+  background: linear-gradient(180deg, rgba(3, 9, 23, 0.94), transparent);
+}
+
+.reel-window::after {
+  bottom: 12px;
+  background: linear-gradient(0deg, rgba(3, 9, 23, 0.94), transparent);
+}
+
+.reel-window.is-winning {
+  box-shadow:
+    0 0 0 1px rgba(255, 205, 87, 0.35),
+    0 0 28px rgba(255, 205, 87, 0.24);
+}
+
+.reel-track {
+  display: grid;
+  gap: 12px;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+.symbol {
+  display: grid;
+  place-items: center;
+  min-height: 52px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    rgba(16, 28, 55, 0.88);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.token-meter {
+  margin-top: 22px;
+}
+
+.token-meter__label {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.token-meter__track {
+  height: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.token-meter__fill {
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--salmon), var(--gold), var(--teal));
+  transition: width 0.35s ease;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #07101d;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.spin-button {
+  background: linear-gradient(135deg, var(--gold), #ffe9a4);
+  box-shadow: 0 16px 30px rgba(255, 205, 87, 0.24);
+}
+
+.secondary-button {
+  color: var(--text);
+  background: linear-gradient(135deg, rgba(100, 243, 212, 0.22), rgba(137, 185, 255, 0.18));
+  border: 1px solid rgba(100, 243, 212, 0.26);
+}
+
+.message {
+  min-height: 58px;
+  margin: 18px 0 0;
+  font-size: 1.06rem;
+  line-height: 1.6;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 18px;
+}
+
+.panel {
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.panel-heading h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.log-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.log-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.log-list li strong {
+  font-size: 0.98rem;
+}
+
+.paytable {
+  display: grid;
+  gap: 12px;
+}
+
+.paytable-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.paytable-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+.paytable-item b {
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+@keyframes rise-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 920px) {
+  .status-panel,
+  .dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 20px, 1120px);
+    padding-top: 24px;
+  }
+
+  .status-panel,
+  .dashboard,
+  .reels {
+    grid-template-columns: 1fr;
+  }
+
+  .machine-face {
+    padding: 18px;
+  }
+
+  .reel-window {
+    height: 196px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
