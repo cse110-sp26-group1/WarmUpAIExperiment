@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burner 5000</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="marquee-panel">
+        <p class="eyebrow">Silicon Valley Leisure Division</p>
+        <h1>Token Burner 5000</h1>
+        <p class="tagline">
+          Spin the reels, win synthetic glory, and immediately spend it all on
+          “premium inference.”
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="machine-top">
+          <div class="ledger">
+            <p>Wallet</p>
+            <strong id="token-balance">1200</strong>
+            <span>tokens left to vaporize</span>
+          </div>
+          <div class="ledger">
+            <p>Spin Cost</p>
+            <strong>75</strong>
+            <span>per totally necessary request</span>
+          </div>
+          <div class="ledger">
+            <p>Jackpot</p>
+            <strong>900</strong>
+            <span>best case: enough for one vague plan</span>
+          </div>
+        </div>
+
+        <div class="reels-frame">
+          <div class="reels" role="img" aria-label="Three slot machine reels">
+            <div class="reel-window"><div class="reel-symbol" id="reel-0">404</div></div>
+            <div class="reel-window"><div class="reel-symbol" id="reel-1">GPU</div></div>
+            <div class="reel-window"><div class="reel-symbol" id="reel-2">LOL</div></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Spin for 75 Tokens
+          </button>
+          <button id="reset-button" class="ghost-button" type="button">
+            Reset Wallet
+          </button>
+        </div>
+
+        <div class="status-panel">
+          <p id="result-line" class="result-line" aria-live="polite">
+            Welcome back, valued prompt gambler.
+          </p>
+          <div id="meter-line" class="meter-line">
+            Your current business model: burn cash until the dashboard looks
+            sentient.
+          </div>
+        </div>
+
+        <ul class="payouts" aria-label="Payout table">
+          <li><span>3x GPU</span><strong>900 tokens</strong></li>
+          <li><span>3x HYPE</span><strong>600 tokens</strong></li>
+          <li><span>3x PROMPT</span><strong>450 tokens</strong></li>
+          <li><span>Any 2x matching</span><strong>140 tokens</strong></li>
+          <li><span>No match</span><strong>A free lesson in unit economics</strong></li>
+        </ul>
+      </section>
+    </main>
+
+    <template id="confetti-template">
+      <span class="confetti-bit"></span>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

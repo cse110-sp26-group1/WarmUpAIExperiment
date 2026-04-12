@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tugger 5000</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="marquee-card">
+        <p class="eyebrow">Silicon Valley Arcade</p>
+        <h1>Token Tugger 5000</h1>
+        <p class="intro">
+          Spin the reels, burn some tokens, and see whether the machine blesses
+          you with synthetic confidence or another invoice for “premium AI.”
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="machine-top">
+          <div class="status-panel">
+            <span class="status-label">Wallet</span>
+            <strong id="token-count">120</strong>
+            <span class="status-unit">tokens</span>
+          </div>
+          <div class="status-panel">
+            <span class="status-label">Last spin</span>
+            <strong id="last-payout">0</strong>
+            <span class="status-unit">tokens</span>
+          </div>
+          <div class="status-panel">
+            <span class="status-label">Mood</span>
+            <strong id="ai-mood">Smug</strong>
+            <span class="status-unit">as a service</span>
+          </div>
+        </div>
+
+        <div class="reels-frame">
+          <div class="payline" aria-hidden="true"></div>
+          <div class="reel" id="reel-1" aria-live="polite">PROMPT</div>
+          <div class="reel" id="reel-2" aria-live="polite">TOKEN</div>
+          <div class="reel" id="reel-3" aria-live="polite">404</div>
+        </div>
+
+        <div class="controls">
+          <label class="bet-panel" for="bet-input">
+            <span>Bet size</span>
+            <input id="bet-input" type="range" min="5" max="25" step="5" value="10" />
+            <strong id="bet-display">10 tokens</strong>
+          </label>
+
+          <button id="spin-button" type="button">Spin For Clout</button>
+        </div>
+
+        <div class="message-board" aria-live="polite">
+          <p id="result-message">
+            The machine is warmed up and ready to monetize your curiosity.
+          </p>
+        </div>
+
+        <div class="footer-stats">
+          <div class="status-panel">
+            <span class="status-label">Best wallet</span>
+            <strong id="best-wallet">120</strong>
+            <span class="status-unit">tokens hoarded</span>
+          </div>
+          <button id="reset-button" type="button" class="secondary-button">
+            Reset Economy
+          </button>
+        </div>
+
+        <section class="payouts">
+          <h2>Questionable Payout Table</h2>
+          <ul>
+            <li><span>3x TOKEN</span><strong>6x your bet</strong></li>
+            <li><span>3x PROMPT</span><strong>5x your bet</strong></li>
+            <li><span>3x GPU</span><strong>4x your bet</strong></li>
+            <li><span>2x matching anything</span><strong>2x your bet</strong></li>
+            <li><span>3x ERROR</span><strong>Refund + public apology</strong></li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

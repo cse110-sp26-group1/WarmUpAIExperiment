@@ -1,0 +1,324 @@
+:root {
+  --bg-top: #120f23;
+  --bg-bottom: #241130;
+  --panel: rgba(18, 19, 34, 0.8);
+  --panel-strong: rgba(11, 12, 24, 0.94);
+  --text: #fff7dd;
+  --muted: #c6c0e6;
+  --accent: #ff9f1c;
+  --accent-2: #ff4d6d;
+  --accent-3: #2ec4b6;
+  --line: rgba(255, 255, 255, 0.12);
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 159, 28, 0.28), transparent 28%),
+    radial-gradient(circle at top right, rgba(46, 196, 182, 0.18), transparent 30%),
+    linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 88%);
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.hero {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 0.03em;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  text-shadow: 0 0 28px rgba(255, 77, 109, 0.24);
+}
+
+.tagline {
+  max-width: 54rem;
+  margin: 1rem 0 0;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.machine-panel {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent),
+    var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.panel-header,
+.machine-stage,
+.payouts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.panel-copy,
+.payouts-header p,
+.status-detail,
+.payout-item p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.4rem 0 1.75rem;
+}
+
+.status-card,
+.pitch-box,
+.payout-item {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.status-label {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.status-value {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.machine-stage {
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+.slot-frame {
+  flex: 1.3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.1rem;
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(255, 159, 28, 0.22), rgba(255, 77, 109, 0.15)),
+    var(--panel-strong);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  position: relative;
+  overflow: hidden;
+}
+
+.slot-frame::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 50%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(255, 247, 221, 0.7), transparent);
+  transform: translateY(50%);
+}
+
+.reel-window {
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.32), rgba(255, 255, 255, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35);
+}
+
+.reel-symbol {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.1rem);
+  text-align: center;
+  line-height: 1;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.reel-symbol.spinning {
+  transform: translateY(8px) scale(0.94);
+  opacity: 0.6;
+}
+
+.reel-symbol.hit {
+  color: var(--accent);
+  text-shadow: 0 0 18px rgba(255, 159, 28, 0.6);
+}
+
+.side-console {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pitch-box h3 {
+  font-size: 1.1rem;
+}
+
+.message {
+  min-height: 5.2rem;
+  margin: 0.65rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.cta-group {
+  display: grid;
+  gap: 0.85rem;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 1rem 1.2rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.spin-button {
+  color: #1d1328;
+  background: linear-gradient(135deg, #ffd166, #ff9f1c);
+  box-shadow: 0 16px 30px rgba(255, 159, 28, 0.35);
+}
+
+.secondary-button {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line);
+}
+
+.payouts {
+  margin-top: 1.5rem;
+}
+
+.payout-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.combo {
+  display: inline-block;
+  color: var(--accent-3);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 980px) {
+  .status-grid,
+  .payout-list,
+  .machine-stage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .machine-stage {
+    display: block;
+  }
+
+  .side-console {
+    margin-top: 1rem;
+  }
+
+  .payout-list {
+    display: grid;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    width: min(100% - 1rem, 100%);
+    padding-top: 1rem;
+  }
+
+  .machine-panel {
+    padding: 1rem;
+  }
+
+  .panel-header,
+  .payouts-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status-grid,
+  .payout-list {
+    grid-template-columns: 1fr;
+  }
+
+  .slot-frame {
+    min-height: auto;
+  }
+
+  .reel-window {
+    min-height: 140px;
+  }
+
+  .reel-symbol {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tug Casino</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Vanilla HTML + CSS + JavaScript</p>
+        <h1>Token Tug Casino</h1>
+        <p class="intro">
+          Pull the lever, win imaginary AI tokens, then immediately spend them on
+          “premium inference vibes.” Silicon Valley would be so proud.
+        </p>
+      </section>
+
+      <section class="machine-card">
+        <div class="machine-top">
+          <div>
+            <p class="panel-label">Balance</p>
+            <strong id="balance" class="metric">1200</strong>
+            <span class="metric-copy">tokens available for reckless innovation</span>
+          </div>
+          <div class="status-pill" id="statusPill">Model confidence: unreasonably high</div>
+        </div>
+
+        <div class="reels-wrap" aria-label="Slot machine reels">
+          <div class="reel" id="reel1" aria-live="polite">GPU</div>
+          <div class="reel" id="reel2" aria-live="polite">GPU</div>
+          <div class="reel" id="reel3" aria-live="polite">GPU</div>
+        </div>
+
+        <div class="controls">
+          <label class="bet-control" for="betRange">
+            <span>Spin cost</span>
+            <strong><span id="betValue">75</span> tokens</strong>
+          </label>
+          <input
+            id="betRange"
+            type="range"
+            min="25"
+            max="250"
+            step="25"
+            value="75"
+          />
+
+          <div class="button-row">
+            <button id="spinButton" class="spin-button">Spin the prompt</button>
+            <button id="resetButton" class="ghost-button">Reboot the hype cycle</button>
+          </div>
+        </div>
+
+        <div class="scoreboard">
+          <article class="score-card">
+            <p class="panel-label">Last outcome</p>
+            <strong id="outcomeTitle">Waiting for the first hallucination</strong>
+            <span id="outcomeCopy">Three reels. Zero benchmarks. Endless confidence.</span>
+          </article>
+          <article class="score-card">
+            <p class="panel-label">Lifetime waste</p>
+            <strong id="spentTokens">0</strong>
+            <span>tokens vaporized into “strategic AI initiatives”</span>
+          </article>
+          <article class="score-card">
+            <p class="panel-label">Jackpot line</p>
+            <strong id="jackpotCount">0</strong>
+            <span>times the model actually delivered</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="log-card">
+        <div class="log-header">
+          <h2>Spend Report</h2>
+          <p>Recent token economics, audited by nobody.</p>
+        </div>
+        <ul id="eventLog" class="event-log" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

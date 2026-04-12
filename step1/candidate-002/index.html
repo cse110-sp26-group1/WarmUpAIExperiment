@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tilter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Vanilla HTML + CSS + JavaScript</p>
+        <h1>Token Tilter</h1>
+        <p class="tagline">
+          Pull the lever, win fake AI tokens, and feed the machine before it
+          starts pricing every thought as premium inference.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="machine-top">
+          <div class="display-card">
+            <span class="display-label">Wallet</span>
+            <strong id="token-balance">120</strong>
+            <span class="display-unit">tokens</span>
+          </div>
+
+          <div class="display-card">
+            <span class="display-label">Spin Cost</span>
+            <strong id="spin-cost">15</strong>
+            <span class="display-unit">tokens</span>
+          </div>
+
+          <div class="display-card streak-card">
+            <span class="display-label">Streak</span>
+            <strong id="win-streak">0</strong>
+            <span class="display-unit">lucky prompts</span>
+          </div>
+        </div>
+
+        <div class="machine-center">
+          <div class="reels-frame" role="img" aria-label="Three slot reels">
+            <div class="reel-window">
+              <div class="reel" data-reel="0">Hallucination</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel" data-reel="1">Rate Limit</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel" data-reel="2">Token Rain</div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button id="spin-button" class="spin-button" type="button">
+              Spin For Tokens
+            </button>
+            <button id="refill-button" class="refill-button" type="button">
+              Beg Investor For Credits
+            </button>
+          </div>
+        </div>
+
+        <div class="payouts">
+          <h2>Payout Table</h2>
+          <ul>
+            <li><span>3x Token Rain</span><strong>+140 tokens</strong></li>
+            <li><span>3x Prompt Gold</span><strong>+90 tokens</strong></li>
+            <li><span>3 matching anything</span><strong>+55 tokens</strong></li>
+            <li><span>2 matching anything</span><strong>+20 tokens</strong></li>
+            <li><span>No match</span><strong>Machine posts cringe</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="status-panel">
+        <h2>Console Output</h2>
+        <p id="status-message" class="status-message">
+          Idle. The model is confidently pretending to understand probability.
+        </p>
+        <ol id="event-log" class="event-log" aria-label="Recent game events"></ol>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

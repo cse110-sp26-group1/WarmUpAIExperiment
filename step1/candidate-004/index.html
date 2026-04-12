@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Gobbler 3000</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Silicon Valley Casino Division</p>
+        <h1>Token Gobbler 3000</h1>
+        <p class="tagline">
+          Pull the lever, win imaginary AI tokens, and immediately spend them on
+          vague productivity promises.
+        </p>
+      </section>
+
+      <section class="machine-panel" aria-labelledby="machine-title">
+        <div class="panel-header">
+          <div>
+            <h2 id="machine-title">Prompt-to-Profit Slot Engine</h2>
+            <p class="panel-copy">
+              Every spin costs tokens. Every win unlocks fresh nonsense.
+            </p>
+          </div>
+          <button id="resetButton" class="secondary-button" type="button">
+            Reset Empire
+          </button>
+        </div>
+
+        <div class="status-grid" aria-label="Game stats">
+          <article class="status-card">
+            <span class="status-label">Wallet</span>
+            <strong id="tokenBalance" class="status-value">120</strong>
+            <span class="status-detail">tokens left to disrupt with</span>
+          </article>
+          <article class="status-card">
+            <span class="status-label">Spin Cost</span>
+            <strong id="spinCost" class="status-value">15</strong>
+            <span class="status-detail">per premium hallucination</span>
+          </article>
+          <article class="status-card">
+            <span class="status-label">Lifetime Wins</span>
+            <strong id="lifetimeWins" class="status-value">0</strong>
+            <span class="status-detail">tokens extracted from the void</span>
+          </article>
+          <article class="status-card">
+            <span class="status-label">Top Grift</span>
+            <strong id="bestWin" class="status-value">0</strong>
+            <span class="status-detail">best single spin payoff</span>
+          </article>
+        </div>
+
+        <div class="machine-stage">
+          <div class="slot-frame" aria-live="polite">
+            <div class="reel-window">
+              <div id="reel1" class="reel-symbol">GPU</div>
+            </div>
+            <div class="reel-window">
+              <div id="reel2" class="reel-symbol">HYPE</div>
+            </div>
+            <div class="reel-window">
+              <div id="reel3" class="reel-symbol">TOKEN</div>
+            </div>
+          </div>
+
+          <aside class="side-console">
+            <div class="pitch-box">
+              <h3>Today’s monetization story</h3>
+              <p id="message" class="message">
+                You have seed funding and no brakes. Spin responsibly.
+              </p>
+            </div>
+
+            <div class="cta-group">
+              <button id="spinButton" class="spin-button" type="button">
+                Spend 15 Tokens
+              </button>
+              <button id="autoSpinButton" class="secondary-button" type="button">
+                Auto Hype x3
+              </button>
+            </div>
+          </aside>
+        </div>
+
+        <section class="payouts" aria-labelledby="payout-title">
+          <div class="payouts-header">
+            <h3 id="payout-title">Payout Table</h3>
+            <p>Matching symbols mean investors clap. Mixed bags still generate spin.</p>
+          </div>
+          <div class="payout-list">
+            <article class="payout-item">
+              <span class="combo">GPU GPU GPU</span>
+              <strong>+120 tokens</strong>
+              <p>Infrastructure supremacy. Your runway just became someone else’s problem.</p>
+            </article>
+            <article class="payout-item">
+              <span class="combo">TOKEN TOKEN TOKEN</span>
+              <strong>+90 tokens</strong>
+              <p>You invented a coin for a product that still loads forever.</p>
+            </article>
+            <article class="payout-item">
+              <span class="combo">PROMPT PROMPT PROMPT</span>
+              <strong>+70 tokens</strong>
+              <p>Three prompts aligned. Management calls this “thought leadership.”</p>
+            </article>
+            <article class="payout-item">
+              <span class="combo">Any pair</span>
+              <strong>+25 tokens</strong>
+              <p>Enough synergy to justify another keynote.</p>
+            </article>
+            <article class="payout-item">
+              <span class="combo">No match</span>
+              <strong>+0 tokens</strong>
+              <p>You spent real energy to produce premium slop. Classic.</p>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
