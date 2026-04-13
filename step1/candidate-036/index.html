@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tugger 3000</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Silicon Valley Wellness Casino</p>
+      <h1>Token Tugger 3000</h1>
+      <p class="tagline">
+        Spin the reels, earn imaginary AI tokens, and immediately spend them on premium nonsense.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="Slot machine">
+      <div class="status-bar">
+        <div class="status-pill">
+          <span class="status-label">Wallet</span>
+          <strong id="tokenBalance">120</strong>
+          <span class="status-label">tokens</span>
+        </div>
+        <div class="status-pill">
+          <span class="status-label">Spin cost</span>
+          <strong id="spinCost">15</strong>
+          <span class="status-label">tokens</span>
+        </div>
+        <button id="soundToggle" class="ghost-button" type="button" aria-pressed="true">
+          Sound on
+        </button>
+      </div>
+
+      <div class="reel-frame" role="group" aria-label="Three slot reels">
+        <div class="reel" data-reel="0" aria-live="polite">GPU</div>
+        <div class="reel" data-reel="1" aria-live="polite">GPU</div>
+        <div class="reel" data-reel="2" aria-live="polite">GPU</div>
+      </div>
+
+      <div class="controls">
+        <button id="spinButton" class="spin-button" type="button">Pull Lever</button>
+        <button id="demoButton" class="ghost-button" type="button">Beg VC for 50 tokens</button>
+      </div>
+
+      <div class="message-panel">
+        <p id="roundMessage" class="round-message">
+          Your startup has pivoted from "AI for pets" to "slot machine for prompts." Investors are listening.
+        </p>
+        <p id="narration" class="narration">Press pull lever and let the hype cycle decide your fate.</p>
+      </div>
+    </section>
+
+    <section class="rewards-card">
+      <h2>Payout Lore</h2>
+      <ul class="payout-list">
+        <li><span>3x GPU</span><strong>+90</strong><em>Cloud credits mysteriously appeared.</em></li>
+        <li><span>3x Prompt</span><strong>+70</strong><em>You invented "chain-of-vibes."</em></li>
+        <li><span>3x Token</span><strong>+65</strong><em>Infinite value, no utility.</em></li>
+        <li><span>2 of a kind</span><strong>+25</strong><em>Synergy deck approved.</em></li>
+        <li><span>No match</span><strong>-15</strong><em>That was spent on inference.</em></li>
+      </ul>
+    </section>
+  </main>
+
+  <template id="toastTemplate">
+    <div class="toast" role="status" aria-live="polite"></div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
