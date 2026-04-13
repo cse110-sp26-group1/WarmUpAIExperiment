@@ -14,7 +14,7 @@ Wall-clock time (s): 12609
 
 Files produced: index.html, script.js, styles.css
 
-Lines of code: 342
+Lines of code: 345
 
 Runs in browser? Yes
 
