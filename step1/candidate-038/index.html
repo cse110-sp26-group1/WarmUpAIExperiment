@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Goblin 3000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="machine-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Vanilla HTML + CSS + JS</p>
+      <h1>Token Goblin 3000</h1>
+      <p class="tagline">
+        Pull the lever, burn through synthetic hype tokens, and pray the machine blesses you with premium autocomplete energy.
+      </p>
+
+      <div class="stats-grid">
+        <article class="stat">
+          <span class="stat-label">Wallet</span>
+          <strong id="tokenBalance">120</strong>
+          <span class="stat-foot">prompt credits</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">Spin Cost</span>
+          <strong id="spinCost">15</strong>
+          <span class="stat-foot">tokens per delusion</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">Jackpot</span>
+          <strong>90</strong>
+          <span class="stat-foot">if the bots align</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="machine-card">
+      <div class="marquee">
+        <span>Now serving speculative intelligence</span>
+        <span>Latency spiritually reduced</span>
+        <span>Terms of service emotionally binding</span>
+      </div>
+
+      <div class="machine-top">
+        <div>
+          <p class="machine-label">Model Mood</p>
+          <p class="model-status" id="modelStatus">Feeling aggressively overconfident</p>
+        </div>
+        <button id="themeButton" class="secondary-button" type="button">Rotate corporate spin</button>
+      </div>
+
+      <section class="reels-panel" aria-label="Slot machine reels">
+        <div class="reel" data-reel="0"><span>404 Hype</span></div>
+        <div class="reel" data-reel="1"><span>Hallucination</span></div>
+        <div class="reel" data-reel="2"><span>GPU Tears</span></div>
+      </section>
+
+      <div class="controls">
+        <button id="spinButton" class="spin-button" type="button">Spend 15 tokens</button>
+        <button id="resetButton" class="ghost-button" type="button">Emergency bailout</button>
+      </div>
+
+      <section class="payouts" aria-label="Payout table">
+        <h2>Reward Logic</h2>
+        <ul>
+          <li>3 matching icons: +90 tokens and a surge of fake confidence</li>
+          <li>2 matching icons: +35 tokens and one smug nod from the algorithm</li>
+          <li>No match: the machine thanks you for funding inference</li>
+        </ul>
+      </section>
+
+      <section class="feed-card" aria-live="polite">
+        <p class="feed-label">Live Commentary</p>
+        <p id="messageLog" class="message-log">
+          Welcome back, valued data point. Your wallet has been pre-optimistically seeded.
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
