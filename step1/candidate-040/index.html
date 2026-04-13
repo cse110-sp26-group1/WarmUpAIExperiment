@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tugger 9000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="machine-shell">
+    <section class="hero">
+      <p class="eyebrow">Vanilla HTML + CSS + JS</p>
+      <h1>Token Tugger 9000</h1>
+      <p class="tagline">
+        Pull the lever, farm some imaginary AI tokens, and immediately spend them on
+        bigger context windows and premium hallucinations.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI token slot machine">
+      <div class="status-grid">
+        <article class="status-card">
+          <span class="status-label">Wallet</span>
+          <strong id="token-balance">120</strong>
+          <span class="status-foot">prompt tokens</span>
+        </article>
+        <article class="status-card">
+          <span class="status-label">Spin Cost</span>
+          <strong id="spin-cost">15</strong>
+          <span class="status-foot">tokens per request</span>
+        </article>
+        <article class="status-card">
+          <span class="status-label">Mood</span>
+          <strong id="machine-mood">Confident</strong>
+          <span class="status-foot">totally not guessing</span>
+        </article>
+      </div>
+
+      <div class="reels-panel">
+        <div class="marquee">LIVE TOKEN ECONOMY</div>
+        <div class="reels" role="group" aria-label="Slot machine reels">
+          <div class="reel-frame"><div class="reel" id="reel-0" aria-live="polite">🤖</div></div>
+          <div class="reel-frame"><div class="reel" id="reel-1" aria-live="polite">🪙</div></div>
+          <div class="reel-frame"><div class="reel" id="reel-2" aria-live="polite">🔥</div></div>
+        </div>
+        <p class="result" id="result-message">Boot complete. The model is ready to monetize your curiosity.</p>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Spin For Tokens</button>
+        <button id="upgrade-button" class="secondary-button" type="button">Buy Dubious Upgrade</button>
+      </div>
+
+      <section class="paytable" aria-label="Payout table">
+        <h2>Payout Table</h2>
+        <ul>
+          <li><span>🤖 🤖 🤖</span><strong>+90 tokens</strong><em>Model achieves sentience for marketing purposes</em></li>
+          <li><span>🪙 🪙 🪙</span><strong>+60 tokens</strong><em>The blockchain interns applaud</em></li>
+          <li><span>🔥 🔥 🔥</span><strong>+45 tokens</strong><em>Your GPU briefly levitates</em></li>
+          <li><span>🧠 ⚡ 🤖</span><strong>+35 tokens</strong><em>Breakthrough demo energy</em></li>
+          <li><span>Any pair</span><strong>+18 tokens</strong><em>Close enough for venture funding</em></li>
+          <li><span>🧾</span><strong>-12 tokens</strong><em>Surprise invoice for enterprise features</em></li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
