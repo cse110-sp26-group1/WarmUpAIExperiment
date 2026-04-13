@@ -13,3 +13,6 @@ App Quality Notes:
  - new purple UI
  - gives notifications at the bottom for win status and reaction text box below spin
  - has an option to "beg VC for tokens"
+ - good styling
+ - no documentation
+ - easy to read
