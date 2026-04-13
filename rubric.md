@@ -26,7 +26,7 @@ Harness: Codex
 
 - Vanilla HTML, CSS, JS only (3pts)
 - Runs without errors from the correct directory (3pts)
-- Looks like a correctly functioning slot machine (3pts)
+- Looks like a correctly functioning slot machine that follows the prompt (3pts)
 
 ## Total:
 
