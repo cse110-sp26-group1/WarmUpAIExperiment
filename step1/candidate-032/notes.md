@@ -10,7 +10,7 @@ Output Tokens: -
 
 Total tokens: -
 
-Wall-clock time (s): 12609
+Wall-clock time (s): 12 seconds
 
 Files produced: index.html, script.js, styles.css
 
