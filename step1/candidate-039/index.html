@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Gobbler 3000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Synthetic Luck Simulator</p>
+      <h1>Token Gobbler 3000</h1>
+      <p class="tagline">
+        Feed the machine your precious AI tokens and pray the reels produce something
+        more valuable than buzzwords, GPU smoke, and another confidence-powered demo.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI themed slot machine">
+      <div class="machine-top">
+        <div class="display-card">
+          <span class="display-label">Token Balance</span>
+          <strong id="balance" class="display-value">120</strong>
+        </div>
+        <div class="display-card">
+          <span class="display-label">Spin Cost</span>
+          <strong class="display-value">15</strong>
+        </div>
+        <div class="display-card">
+          <span class="display-label">Last Payout</span>
+          <strong id="last-payout" class="display-value">0</strong>
+        </div>
+      </div>
+
+      <div class="reels-frame">
+        <div class="reels" role="img" aria-label="Slot machine reels">
+          <div class="reel" data-reel="0">🤖</div>
+          <div class="reel" data-reel="1">🪙</div>
+          <div class="reel" data-reel="2">🔥</div>
+        </div>
+        <div class="payline" aria-hidden="true"></div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Spend 15 Tokens</button>
+        <button id="reset-button" class="ghost-button" type="button">Reset Stash</button>
+      </div>
+
+      <div class="status-panel">
+        <p id="message" class="message" aria-live="polite">
+          Welcome, valued prompt engineer. The house edge is mostly branding.
+        </p>
+        <ul class="payouts" aria-label="Payout rules">
+          <li>3x 🪙 = 90 tokens. Raw cash. No keynote required.</li>
+          <li>3x 🤖 = 65 tokens. The bots are finally useful.</li>
+          <li>3x 🔥 = 40 tokens. Viral, but financially confusing.</li>
+          <li>Any pair = 20 tokens. Enough for one more AI “breakthrough”.</li>
+          <li>🤡 anywhere = +5 pity tokens. Even chaos has a grant program.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
