@@ -12,3 +12,7 @@ App Quality Notes:
  - Sarcastic
  - Tracks: Wallet, mood, spin cost twice, last payout, hype level
  - machine commentary
+
+ - good styling
+ - no documentation
+ - easy to read
