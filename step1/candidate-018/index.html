@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tug Casino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Large Language Losses Presents</p>
+        <h1>Token Tug Casino</h1>
+        <p class="subtitle">
+          Pull the lever, win prompt tokens, and watch the machine remind you
+          that artificial intelligence is mostly just expensive autocomplete
+          with branding.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="machine-top">
+          <div class="marquee">
+            <span class="marquee-label">Today&apos;s Hot Model</span>
+            <strong id="marqueeText">GPT-WHY</strong>
+          </div>
+          <button id="muteButton" class="mute-button" type="button" aria-pressed="false">
+            Sound On
+          </button>
+        </div>
+
+        <div class="status-bar">
+          <article class="meter">
+            <span class="meter-label">Wallet</span>
+            <strong id="tokenCount">120</strong>
+            <span class="meter-note">tokens left to hallucinate with</span>
+          </article>
+          <article class="meter">
+            <span class="meter-label">Jackpot</span>
+            <strong id="jackpotCount">900</strong>
+            <span class="meter-note">peak venture-capital optimism</span>
+          </article>
+          <article class="meter">
+            <span class="meter-label">Best Run</span>
+            <strong id="bestScore">0</strong>
+            <span class="meter-note">stored in localStorage, not the cloud</span>
+          </article>
+        </div>
+
+        <div class="reels-frame">
+          <div class="scanlines" aria-hidden="true"></div>
+          <div class="reels" role="group" aria-label="slot reels">
+            <div class="reel-window">
+              <div class="reel-symbol" id="reel0" aria-live="polite">🤖</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel-symbol" id="reel1" aria-live="polite">🪙</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel-symbol" id="reel2" aria-live="polite">🧠</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <label class="bet-panel" for="betRange">
+            <span>Prompt Spend</span>
+            <input id="betRange" type="range" min="5" max="30" step="5" value="10" />
+            <strong><span id="betAmount">10</span> tokens</strong>
+          </label>
+
+          <div class="button-row">
+            <button id="spinButton" class="primary-button" type="button">
+              Spin The Hype Cycle
+            </button>
+            <button id="resetButton" class="secondary-button" type="button">
+              Reboot Startup
+            </button>
+          </div>
+        </div>
+
+        <section class="message-panel">
+          <p id="resultMessage">
+            Ready to gamble your compute budget on vibes.
+          </p>
+          <ul class="paytable">
+            <li>3x 🪙 = token shower</li>
+            <li>3x 🤖 = fully funded demo</li>
+            <li>3x 📉 = market correction</li>
+            <li>Any mismatch = thank you for your API credits</li>
+          </ul>
+        </section>
+
+        <section class="feed-section" aria-label="AI satire headlines">
+          <div id="tickerFeed" class="ticker-feed"></div>
+        </section>
+
+        <div id="confettiField" class="confetti-field" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <template id="tickerTemplate">
+      <p class="ticker-line"></p>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

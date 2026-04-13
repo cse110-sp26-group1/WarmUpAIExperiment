@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Gobbler 3000</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Vanilla HTML + CSS + JavaScript</p>
+        <h1>Token Gobbler 3000</h1>
+        <p class="hero-copy">
+          Spin the reels, win fake AI tokens, and immediately spend them on the
+          kind of premium nonsense no one asked for.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="status-bar">
+          <article class="stat-card">
+            <span class="stat-label">Token Balance</span>
+            <strong class="stat-value" id="token-balance">120</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Current Bet</span>
+            <strong class="stat-value" id="bet-display">15</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Hype Streak</span>
+            <strong class="stat-value" id="streak-display">0</strong>
+          </article>
+        </div>
+
+        <div class="reel-frame" role="img" aria-live="polite" aria-label="Slot reels">
+          <div class="reel-window">
+            <div class="reel" id="reel-0">🤖</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" id="reel-1">🪙</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" id="reel-2">🧠</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <label class="bet-picker" for="bet-range">
+            <span>Adjust token burn rate</span>
+            <input id="bet-range" type="range" min="5" max="40" step="5" value="15" />
+          </label>
+          <button id="spin-button" class="spin-button" type="button">
+            Spin For Dubious Intelligence
+          </button>
+        </div>
+
+        <section class="event-panel">
+          <div class="message-card">
+            <h2>Model Output</h2>
+            <p id="message-text">
+              Ready to convert your hard-earned tokens into beautifully formatted overconfidence.
+            </p>
+          </div>
+          <div class="message-card spend-card">
+            <h2>Automatic Spending</h2>
+            <p id="spend-text">No spend event yet. The consultants are circling.</p>
+          </div>
+        </section>
+
+        <section class="paytable">
+          <h2>Ridiculous Payout Table</h2>
+          <ul>
+            <li><span>🪙 🪙 🪙</span><strong>5x bet</strong><em>Actual value, suspiciously rare.</em></li>
+            <li><span>🤖 🤖 🤖</span><strong>4x bet</strong><em>Three bots agree. Bad sign.</em></li>
+            <li><span>🔥 🔥 🔥</span><strong>6x bet</strong><em>Viral demo energy.</em></li>
+            <li><span>Any pair</span><strong>2x bet</strong><em>Close enough for a funding round.</em></li>
+            <li><span>🧻 anywhere</span><strong>-1 spend tier</strong><em>Prompt cleanup fee waived.</em></li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
