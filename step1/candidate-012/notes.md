@@ -13,4 +13,6 @@ App Quality Notes:
  - Similar UI
  - Joking tone
  - includes alignment notes and jackpot
-  
+ - good styling
+ - no documentation
+ - easy to read
