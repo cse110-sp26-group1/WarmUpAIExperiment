@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token-Fueled AI Slot Machine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Platform API Powered</p>
+        <h1>Prompt Palace</h1>
+        <p class="tagline">
+          Spin for tokens, waste them on “premium intelligence,” and let the
+          house remind you that autocomplete still wants a tip.
+        </p>
+      </section>
+
+      <section class="machine-panel" aria-labelledby="slot-title">
+        <div class="panel-top">
+          <div>
+            <p class="label">Wallet</p>
+            <p id="token-balance" class="stat">120 tokens</p>
+          </div>
+          <div>
+            <p class="label">Mood</p>
+            <p id="machine-mood" class="stat accent">Smug</p>
+          </div>
+          <div>
+            <p class="label">Spin Cost</p>
+            <p class="stat">15 tokens</p>
+          </div>
+        </div>
+
+        <h2 id="slot-title">Inference Engine Deluxe</h2>
+
+        <div class="reels" aria-live="polite">
+          <div class="reel-frame">
+            <div class="reel" id="reel-0">404</div>
+          </div>
+          <div class="reel-frame">
+            <div class="reel" id="reel-1">GPU</div>
+          </div>
+          <div class="reel-frame">
+            <div class="reel" id="reel-2">LOL</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Spend 15 tokens
+          </button>
+          <button id="reset-button" class="ghost-button" type="button">
+            Reboot the startup
+          </button>
+        </div>
+
+        <div class="status-grid">
+          <div class="status-card">
+            <p class="label">Last Payout</p>
+            <p id="last-payout" class="status-value">0 tokens</p>
+          </div>
+          <div class="status-card">
+            <p class="label">Hype Level</p>
+            <p id="hype-level" class="status-value">Seed round energy</p>
+          </div>
+        </div>
+
+        <section class="message-board">
+          <p class="label">Machine Commentary</p>
+          <p id="message">
+            Welcome, valued investor. Please convert your confidence directly
+            into platform credits.
+          </p>
+        </section>
+      </section>
+
+      <section class="paytable" aria-labelledby="paytable-title">
+        <h2 id="paytable-title">Absolutely Serious Prize Logic</h2>
+        <div class="paytable-grid">
+          <article>
+            <h3>Triple GPU</h3>
+            <p>Jackpot. Enough tokens to pretend inference is cheap.</p>
+          </article>
+          <article>
+            <h3>Triple 404</h3>
+            <p>
+              Sympathy prize for losing your prompt, your context, and your
+              dignity.
+            </p>
+          </article>
+          <article>
+            <h3>Any Match</h3>
+            <p>A small refund, like a startup offering exposure instead of pay.</p>
+          </article>
+          <article>
+            <h3>No Match</h3>
+            <p>The machine thanks you for funding the next GPU cluster.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

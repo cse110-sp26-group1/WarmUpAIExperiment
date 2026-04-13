@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tumbler 9000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="marquee-card">
+        <p class="eyebrow">Synthetic Luck Division</p>
+        <h1>Token Tumbler 9000</h1>
+        <p class="tagline">
+          Win fake AI tokens. Spend fake AI tokens. Experience real model
+          confidence.
+        </p>
+      </section>
+
+      <section class="machine-card" aria-label="Slot machine">
+        <div class="machine-top">
+          <div>
+            <p class="label">Prompt Budget</p>
+            <p class="balance"><span id="token-balance">120</span> tokens</p>
+          </div>
+          <div class="status-pill" id="streak-label">Streak: 0</div>
+        </div>
+
+        <div class="reel-frame" role="img" aria-label="Three slot reels">
+          <div class="reel" id="reel-0">404</div>
+          <div class="reel" id="reel-1">404</div>
+          <div class="reel" id="reel-2">404</div>
+        </div>
+
+        <div class="controls">
+          <label class="bet-panel" for="bet-range">
+            <span>Inference Spend</span>
+            <input id="bet-range" type="range" min="5" max="25" step="5" value="10" />
+            <strong><span id="bet-value">10</span> tokens per spin</strong>
+          </label>
+
+          <button class="spin-button" id="spin-button" type="button">
+            Spin The Hype Cycle
+          </button>
+        </div>
+
+        <section class="result-panel">
+          <p class="result-line" id="result-line">
+            Press spin and let the benchmark theater begin.
+          </p>
+          <p class="sub-line" id="sub-line">
+            Three matching symbols unlock premium artificial optimism.
+          </p>
+        </section>
+      </section>
+
+      <section class="legend-card">
+        <h2>Payout Lore</h2>
+        <ul class="payout-list">
+          <li><span>AGI</span><strong>5x</strong></li>
+          <li><span>GPU</span><strong>4x</strong></li>
+          <li><span>SEED</span><strong>3x</strong></li>
+          <li><span>404</span><strong>2x</strong></li>
+          <li><span>Two matches</span><strong>1.5x</strong></li>
+        </ul>
+        <p class="small-print">
+          No actual intelligence was consulted while determining these odds.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

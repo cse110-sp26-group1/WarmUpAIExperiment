@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Grinder 9000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Vanilla HTML + CSS + JS</p>
+        <h1>Token Grinder 9000</h1>
+        <p class="tagline">
+          Spend precious prompt budget. Win back synthetic praise, venture vibes,
+          and maybe enough tokens to ask AI for one more “quick tweak.”
+        </p>
+      </section>
+
+      <section class="machine-card" aria-labelledby="machine-title">
+        <div class="machine-top">
+          <div>
+            <p class="eyebrow">Satirical Slot Interface</p>
+            <h2 id="machine-title">Alignment Casino</h2>
+          </div>
+          <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true">
+            Sound: On
+          </button>
+        </div>
+
+        <div class="status-grid" aria-label="Machine status">
+          <article class="status-panel">
+            <span class="status-label">Your Tokens</span>
+            <strong id="tokenCount">120</strong>
+          </article>
+          <article class="status-panel">
+            <span class="status-label">Spin Cost</span>
+            <strong id="spinCost">15</strong>
+          </article>
+          <article class="status-panel">
+            <span class="status-label">Mood</span>
+            <strong id="aiMood">Confidently guessing</strong>
+          </article>
+        </div>
+
+        <div class="machine-frame">
+          <div class="reels" id="reels" aria-live="polite">
+            <div class="reel-window"><span class="reel" id="reel0">Prompt</span></div>
+            <div class="reel-window"><span class="reel" id="reel1">Tokens</span></div>
+            <div class="reel-window"><span class="reel" id="reel2">Synergy</span></div>
+          </div>
+          <div class="machine-glow" aria-hidden="true"></div>
+        </div>
+
+        <div class="controls">
+          <button class="spin-button" id="spinButton" type="button">Spin For 15 Tokens</button>
+          <button class="secondary-button" id="refillButton" type="button">Beg VC For Tokens</button>
+        </div>
+
+        <div class="event-panel">
+          <p class="result-line" id="resultLine">
+            Feed the machine. It promises “transformative productivity.”
+          </p>
+          <p class="sub-line" id="subLine">
+            Three matching symbols means the AI actually shipped something useful.
+          </p>
+        </div>
+
+        <div class="paytable" aria-label="Payout guide">
+          <div class="payline"><span>Triple Hallucination</span><strong>+10 tokens</strong></div>
+          <div class="payline"><span>Triple Synergy</span><strong>+25 tokens</strong></div>
+          <div class="payline"><span>Triple Unicorn</span><strong>+80 tokens</strong></div>
+          <div class="payline"><span>Any pair</span><strong>+5 tokens</strong></div>
+        </div>
+      </section>
+    </main>
+
+    <template id="toastTemplate">
+      <div class="toast"></div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
