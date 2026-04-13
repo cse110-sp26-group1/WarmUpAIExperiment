@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Bandit</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Autonomous Casino Division</p>
+        <h1>Token Bandit</h1>
+        <p class="tagline">
+          Spin the reels, win prompt tokens, and immediately lose them to
+          “helpful” AI platform fees.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI satire slot machine">
+        <div class="machine-top">
+          <div class="score-card">
+            <span class="score-label">Token Wallet</span>
+            <strong id="token-balance">120</strong>
+          </div>
+          <div class="score-card">
+            <span class="score-label">Best Jackpot</span>
+            <strong id="best-win">0</strong>
+          </div>
+          <div class="score-card">
+            <span class="score-label">Spin Cost</span>
+            <strong id="spin-cost">15</strong>
+          </div>
+        </div>
+
+        <div class="reels" aria-live="polite">
+          <div class="reel-frame"><span id="reel-0" class="reel">GPU</span></div>
+          <div class="reel-frame"><span id="reel-1" class="reel">TOK</span></div>
+          <div class="reel-frame"><span id="reel-2" class="reel">404</span></div>
+        </div>
+
+        <div class="status-panel">
+          <p id="status-message" class="status-message">
+            Welcome back. The machine has already read your prompts.
+          </p>
+          <div class="meter-row">
+            <span>Hype Cycle</span>
+            <div class="meter">
+              <div id="hype-fill" class="meter-fill"></div>
+            </div>
+            <span id="streak-count">0 streak</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="action-button">Spin For Tokens</button>
+          <button id="cashout-button" class="ghost-button">
+            Cash Out Your Dignity
+          </button>
+        </div>
+
+        <div class="event-feed">
+          <h2>Model Behavior Log</h2>
+          <ul id="feed-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <template id="feed-item-template">
+      <li class="feed-item"></li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

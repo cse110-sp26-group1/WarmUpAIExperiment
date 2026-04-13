@@ -1,0 +1,320 @@
+:root {
+  --bg-top: #f7e8c8;
+  --bg-bottom: #d7ecff;
+  --panel: rgba(8, 28, 34, 0.9);
+  --panel-soft: rgba(13, 44, 51, 0.8);
+  --text: #effbf7;
+  --muted: #bcd8d4;
+  --accent: #ff7a18;
+  --accent-soft: #ffb65a;
+  --danger: #ff5d73;
+  --line: rgba(255, 255, 255, 0.14);
+  --shadow: 0 24px 60px rgba(18, 35, 39, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.65), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255, 122, 24, 0.2), transparent 26%),
+    linear-gradient(140deg, var(--bg-top), var(--bg-bottom));
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 999px;
+  filter: blur(2px);
+}
+
+body::before {
+  width: 16rem;
+  height: 16rem;
+  top: 8%;
+  right: 6%;
+  background: rgba(255, 122, 24, 0.18);
+}
+
+body::after {
+  width: 20rem;
+  height: 20rem;
+  left: -4rem;
+  bottom: -3rem;
+  background: rgba(0, 140, 255, 0.12);
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.hero-card,
+.machine-panel,
+.odds-card {
+  background: linear-gradient(180deg, var(--panel), var(--panel-soft));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  padding: 1.5rem;
+  border-radius: 28px;
+}
+
+.eyebrow,
+.console-label,
+.status-label {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.74rem;
+  color: var(--accent-soft);
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: "Arial Black", "Trebuchet MS", sans-serif;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+}
+
+h1 {
+  margin-top: 0.5rem;
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.hero-copy {
+  max-width: 58ch;
+  font-size: 1.02rem;
+  color: var(--muted);
+}
+
+.status-bar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.status-pill {
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-pill strong {
+  display: block;
+  margin: 0.35rem 0 0.1rem;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+}
+
+.status-unit {
+  color: var(--muted);
+}
+
+.machine-panel {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 30px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.spin-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.4rem;
+  font: inherit;
+  font-weight: 700;
+  color: #172021;
+  background: linear-gradient(135deg, #ffd45a, var(--accent));
+  box-shadow: 0 12px 24px rgba(255, 122, 24, 0.3);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.spin-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(255, 122, 24, 0.35);
+}
+
+.spin-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.machine-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.reel-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03) 0,
+      rgba(255, 255, 255, 0.03) 16px,
+      transparent 16px,
+      transparent 32px
+    );
+}
+
+.reel-window {
+  display: grid;
+  place-items: center;
+  min-height: 230px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #f8f2df, #fff9ee);
+  border: 4px solid #d7c8a1;
+  overflow: hidden;
+  position: relative;
+}
+
+.reel-window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5),
+    transparent 28%,
+    transparent 72%,
+    rgba(0, 0, 0, 0.08)
+  );
+}
+
+.reel-symbol {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(3.6rem, 10vw, 5.8rem);
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.14));
+}
+
+.reel-symbol.spinning {
+  animation: jitter 180ms linear infinite;
+}
+
+.side-console {
+  display: grid;
+  gap: 1rem;
+}
+
+.console-card {
+  min-height: 150px;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.result-title {
+  margin: 0.45rem 0 0.4rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.result-text,
+.ai-commentary,
+.symbol-list,
+.payout-list {
+  margin: 0;
+  color: var(--muted);
+}
+
+.odds-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.odds-card {
+  padding: 1.2rem;
+  border-radius: 24px;
+}
+
+.symbol-list,
+.payout-list {
+  padding-left: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.symbol-list li,
+.payout-list li {
+  margin: 0.7rem 0;
+}
+
+.symbol-list span {
+  display: inline-block;
+  min-width: 1.8rem;
+}
+
+@keyframes jitter {
+  0% {
+    transform: translateY(-8px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(-8px) rotate(-3deg);
+  }
+}
+
+@media (max-width: 860px) {
+  .status-bar,
+  .machine-grid,
+  .odds-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .reel-window {
+    min-height: 180px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel-symbol.spinning,
+  .spin-button {
+    animation: none;
+    transition: none;
+  }
+}
