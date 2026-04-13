@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tilter 3000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">VANILLA WEB SLOT MACHINE</p>
+      <h1>Token Tilter 3000</h1>
+      <p class="intro">
+        Spin the reels, burn your precious tokens, and pray the machine rewards you with the
+        same confidence AI uses when it invents a citation.
+      </p>
+
+      <div class="status-grid" aria-label="Game status">
+        <article class="status-tile">
+          <span class="status-label">Wallet</span>
+          <strong id="token-count">0</strong>
+          <span class="status-note">tokens left to impress the model</span>
+        </article>
+        <article class="status-tile">
+          <span class="status-label">Best Win</span>
+          <strong id="best-win">0</strong>
+          <span class="status-note">saved in local storage, unlike your context window</span>
+        </article>
+        <article class="status-tile">
+          <span class="status-label">Spin Cost</span>
+          <strong id="spin-cost">15</strong>
+          <span class="status-note">payable in hype and compute credits</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="machine-card" aria-labelledby="machine-title">
+      <div class="machine-topper">
+        <div>
+          <p class="eyebrow">MODEL CASINO FLOOR</p>
+          <h2 id="machine-title">Prompt-and-Pray Reels</h2>
+        </div>
+        <div class="tiny-display" id="mood-display">Model mood: dangerously optimistic</div>
+      </div>
+
+      <div class="reel-frame" role="img" aria-label="Slot machine reels">
+        <div class="scanline"></div>
+        <div class="payline"></div>
+        <div class="reel" data-reel="0">
+          <span class="symbol" id="reel-0">?</span>
+          <span class="symbol-label" id="label-0">awaiting prompt</span>
+        </div>
+        <div class="reel" data-reel="1">
+          <span class="symbol" id="reel-1">?</span>
+          <span class="symbol-label" id="label-1">awaiting prompt</span>
+        </div>
+        <div class="reel" data-reel="2">
+          <span class="symbol" id="reel-2">?</span>
+          <span class="symbol-label" id="label-2">awaiting prompt</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="action-button">Spin For 15 Tokens</button>
+        <button id="reset-button" class="ghost-button">Reset Wallet</button>
+      </div>
+
+      <p class="message" id="message" aria-live="polite">
+        Boot complete. The reels are calibrated for satire.
+      </p>
+
+      <div class="legend">
+        <div class="legend-row"><span>🤖 AI Avatar x3</span><strong>Jackpot +180</strong></div>
+        <div class="legend-row"><span>🪙 Token x3</span><strong>Cache hit +90</strong></div>
+        <div class="legend-row"><span>🧠 Brain x3</span><strong>Reasoning surge +70</strong></div>
+        <div class="legend-row"><span>Any pair</span><strong>Partial delusion +25</strong></div>
+      </div>
+    </section>
+  </main>
+
+  <template id="floating-chip-template">
+    <div class="floating-chip" aria-hidden="true">+TOKENS</div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
