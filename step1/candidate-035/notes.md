@@ -18,6 +18,6 @@ Lines of code: 345
 
 Runs in browser? Yes
 
-App Quality Notes: Candidate-035 provides a full satirical slot machine with wallet/streak dashboards, randomized reel outcomes, configurable payouts, localStorage persistence, and clear user feedback for wins/losses and reset actions.
+App Quality Notes: Complete slot machine app with responsive design, working spin/reset buttons, reel animation, payout system, and wallet save.
 
-Code Quality Notes: Code uses a sensible state object and small helper functions for rendering, payout logic, narration, timing, and audio; it applies defensive checks before spins and keeps styling organized through reusable CSS variables and responsive sections.
+Code Quality Notes: Code is organized into small functions, uses clear variables, prevents invalid spins, and has clean responsive CSS.
