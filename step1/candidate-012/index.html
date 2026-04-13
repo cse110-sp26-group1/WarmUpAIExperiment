@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tumbler 9000</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Tokenized Delusion Engine</p>
+        <h1>Token Tumbler 9000</h1>
+        <p class="tagline">
+          Feed the machine your precious AI tokens and pray it rewards you with
+          more AI tokens, now with 17% extra synthetic confidence.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="scoreboard">
+          <article class="stat-card">
+            <span class="stat-label">Wallet</span>
+            <strong id="balance" class="stat-value">1200</strong>
+            <span class="stat-meta">tokens left to impress investors</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Spin Cost</span>
+            <strong id="cost" class="stat-value">75</strong>
+            <span class="stat-meta">priced by pure vibes</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Jackpot</span>
+            <strong class="stat-value">9999</strong>
+            <span class="stat-meta">redeemable for one standing ovation</span>
+          </article>
+        </div>
+
+        <div class="machine-body">
+          <div class="marquee" id="message" role="status" aria-live="polite">
+            Welcome back. The machine senses a budget line item it can absorb.
+          </div>
+
+          <div class="reels" aria-label="Slot reels">
+            <div class="reel-window">
+              <div class="reel" id="reel-0">GPU</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel" id="reel-1">GPU</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel" id="reel-2">GPU</div>
+            </div>
+          </div>
+
+          <div class="legend">
+            <span>GPU = 2x</span>
+            <span>Prompt = 3x</span>
+            <span>Hallucination = 0x</span>
+            <span>Sentience = chaos bonus</span>
+          </div>
+
+          <div class="controls">
+            <button id="spin-button" class="spin-button" type="button">
+              Spend 75 Tokens
+            </button>
+            <button id="reset-button" class="ghost-button" type="button">
+              Reboot Hype Cycle
+            </button>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="panel">
+            <h2>Alignment Notes</h2>
+            <ul id="history" class="history-list">
+              <li>Session initialized. Morale inflated.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h2>Payout Matrix</h2>
+            <dl class="payouts">
+              <div>
+                <dt>3 matching symbols</dt>
+                <dd>6x spin cost</dd>
+              </div>
+              <div>
+                <dt>2 matching symbols</dt>
+                <dd>2x spin cost</dd>
+              </div>
+              <div>
+                <dt>3 Sentience</dt>
+                <dd>Jackpot and existential dread</dd>
+              </div>
+              <div>
+                <dt>Any Hallucination</dt>
+                <dd>Enjoy your narrative loss</dd>
+              </div>
+            </dl>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
