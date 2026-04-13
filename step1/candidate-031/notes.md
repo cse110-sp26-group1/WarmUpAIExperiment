@@ -4,11 +4,11 @@ Timestamp: 1776059016
 
 Model + Version String: OpenAI (version string not recorded in repository metadata)
 
-Input Tokens: not recorded for candidate-031 in this repository
+Input Tokens: -
 
-Output Tokens: not recorded for candidate-031 in this repository
+Output Tokens: -
 
-Total tokens: not recorded for candidate-031 in this repository
+Total tokens: -
 
 Wall-clock time (s): 6117
 
