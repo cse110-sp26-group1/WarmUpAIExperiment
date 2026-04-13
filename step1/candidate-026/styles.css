@@ -1,0 +1,327 @@
+:root {
+  --bg: #f6efe5;
+  --bg-accent: #ffd76a;
+  --surface: rgba(255, 251, 245, 0.84);
+  --ink: #1d1d1f;
+  --muted: #5d544c;
+  --red: #d9482b;
+  --green: #157a4a;
+  --gold: #c78e12;
+  --line: rgba(29, 29, 31, 0.1);
+  --shadow: 0 22px 60px rgba(95, 51, 12, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(255, 215, 106, 0.8), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(217, 72, 43, 0.22), transparent 32%),
+    linear-gradient(135deg, #f6efe5 0%, #f5e2c6 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(29, 29, 31, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 29, 31, 0.03) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 90%);
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.hero {
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Iowan Old Style", "Book Antiqua", "Palatino Linotype", serif;
+  font-size: clamp(3rem, 7vw, 5.6rem);
+  line-height: 0.95;
+}
+
+.hero-copy {
+  max-width: 48ch;
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.machine {
+  position: relative;
+  overflow: hidden;
+  padding: 1.4rem;
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.machine::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px dashed rgba(29, 29, 31, 0.1);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.machine-top {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.bank-panel,
+.legend-card,
+.status-board {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.bank-panel {
+  padding: 1rem 1.1rem;
+}
+
+.panel-label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.panel-value {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reel-frame {
+  display: grid;
+  place-items: center;
+  min-height: 210px;
+  padding: 0.75rem;
+  border-radius: 24px;
+  border: 1px solid rgba(29, 29, 31, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 233, 200, 0.9));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.reel-symbol {
+  font-size: clamp(3rem, 12vw, 6rem);
+  filter: drop-shadow(0 10px 16px rgba(29, 29, 31, 0.15));
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.machine.spinning .reel-symbol {
+  animation: wobble 220ms linear infinite;
+}
+
+.machine.win .reel-symbol {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 18px rgba(199, 142, 18, 0.45));
+}
+
+.status-board {
+  padding: 1rem 1.1rem;
+}
+
+.headline {
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 700;
+}
+
+.subhead {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.2rem 0 1.4rem;
+  flex-wrap: wrap;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.spin-button,
+.secondary-button {
+  padding: 0.95rem 1.35rem;
+  font-weight: 700;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.spin-button {
+  color: #fffdf8;
+  background: linear-gradient(135deg, #d9482b, #bb3215);
+  box-shadow: 0 14px 30px rgba(217, 72, 43, 0.28);
+}
+
+.secondary-button {
+  color: var(--ink);
+  background: rgba(29, 29, 31, 0.07);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.legend-card {
+  padding: 1rem;
+}
+
+.legend-card strong,
+.legend-symbol {
+  display: block;
+}
+
+.legend-symbol {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.legend-card p {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  max-width: min(360px, calc(100vw - 2rem));
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  color: #fffdf8;
+  background: rgba(29, 29, 31, 0.88);
+  box-shadow: 0 12px 35px rgba(29, 29, 31, 0.2);
+  animation: toast-in 260ms ease;
+}
+
+.toast.good {
+  background: rgba(21, 122, 74, 0.94);
+}
+
+.toast.bad {
+  background: rgba(217, 72, 43, 0.94);
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(4px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .machine-top,
+  .legend {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    width: min(100% - 1rem, 640px);
+    padding-top: 1.25rem;
+  }
+
+  .machine {
+    padding: 1rem;
+    border-radius: 22px;
+  }
+
+  .machine-top,
+  .reels,
+  .legend {
+    grid-template-columns: 1fr;
+  }
+
+  .reel-frame {
+    min-height: 145px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+}

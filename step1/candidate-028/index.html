@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Treadmill Casino</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Vanilla HTML, CSS, JavaScript, and bad incentives</p>
+        <h1>Token Treadmill Casino</h1>
+        <p class="intro">
+          Pull the lever, burn some tokens, and see whether the machine rewards
+          you with premium-grade synthetic confidence.
+        </p>
+      </section>
+
+      <section class="machine-panel">
+        <div class="status-bar" aria-label="game status">
+          <div class="status-card">
+            <span class="status-label">Your tokens</span>
+            <strong id="tokenCount">120</strong>
+          </div>
+          <div class="status-card">
+            <span class="status-label">Spin cost</span>
+            <strong id="spinCost">15</strong>
+          </div>
+          <div class="status-card">
+            <span class="status-label">Last payout</span>
+            <strong id="lastPayout">0</strong>
+          </div>
+        </div>
+
+        <div class="machine-frame">
+          <div class="marquee">
+            <span>Guaranteed to monetize your curiosity</span>
+            <span>Context window not included</span>
+            <span>Zero refunds for hallucinated jackpots</span>
+          </div>
+
+          <div class="reels" aria-label="slot machine reels">
+            <div class="reel" id="reel0" aria-live="polite">🤖</div>
+            <div class="reel" id="reel1" aria-live="polite">💸</div>
+            <div class="reel" id="reel2" aria-live="polite">🔥</div>
+          </div>
+
+          <div class="control-row">
+            <button id="spinButton" class="spin-button" type="button">
+              Spend Tokens
+            </button>
+            <button id="resetButton" class="ghost-button" type="button">
+              Reset Economy
+            </button>
+          </div>
+
+          <p id="message" class="message" aria-live="polite">
+            Welcome back. The machine sensed disposable budget.
+          </p>
+        </div>
+      </section>
+
+      <section class="payout-panel">
+        <div class="panel-card">
+          <h2>Payout Table</h2>
+          <ul class="payout-list">
+            <li><span>🤖 🤖 🤖</span><strong>+120</strong></li>
+            <li><span>💸 💸 💸</span><strong>+90</strong></li>
+            <li><span>🔥 🔥 🔥</span><strong>+60</strong></li>
+            <li><span>Any two matching</span><strong>+25</strong></li>
+            <li><span>One 🤖 anywhere</span><strong>+8</strong></li>
+            <li><span>No synergy detected</span><strong>+0</strong></li>
+          </ul>
+        </div>
+
+        <div class="panel-card roast-card">
+          <h2>Live AI Analysis</h2>
+          <p id="analysisLine">
+            Forecast: you will call this “just one more spin” at least six
+            times.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

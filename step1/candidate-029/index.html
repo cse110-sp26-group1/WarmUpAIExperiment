@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Laundromat</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Vanilla HTML + CSS + JavaScript</p>
+        <h1>Token Laundromat</h1>
+        <p class="hero-copy">
+          Spin the reels, win imaginary compute credits, and immediately feed them
+          back into the machine like a responsible modern AI startup.
+        </p>
+
+        <div class="status-bar" aria-label="game status">
+          <article class="status-pill">
+            <span class="status-label">Wallet</span>
+            <strong id="tokenBalance">120</strong>
+            <span class="status-unit">tokens</span>
+          </article>
+          <article class="status-pill">
+            <span class="status-label">Spin Cost</span>
+            <strong id="spinCost">15</strong>
+            <span class="status-unit">tokens</span>
+          </article>
+          <article class="status-pill">
+            <span class="status-label">Burned</span>
+            <strong id="burnedTotal">0</strong>
+            <span class="status-unit">tokens</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-panel" aria-labelledby="machineTitle">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Probability Engine</p>
+            <h2 id="machineTitle">Alignment-Compatible Slot Machine</h2>
+          </div>
+          <button id="spinButton" class="spin-button" type="button">
+            Burn 15 Tokens
+          </button>
+        </div>
+
+        <div class="machine-grid">
+          <div class="reel-board" aria-live="polite" aria-label="slot reels">
+            <div class="reel-window">
+              <div class="reel-symbol" id="reel0">🤖</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel-symbol" id="reel1">🔥</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel-symbol" id="reel2">🪙</div>
+            </div>
+          </div>
+
+          <aside class="side-console">
+            <div class="console-card">
+              <span class="console-label">Last Outcome</span>
+              <p id="resultTitle" class="result-title">Awaiting questionable investment decisions.</p>
+              <p id="resultText" class="result-text">
+                Press the button and let the machine decide whether your tokens
+                become venture capital or vapor.
+              </p>
+            </div>
+
+            <div class="console-card">
+              <span class="console-label">AI Commentary</span>
+              <p id="aiCommentary" class="ai-commentary">
+                Hello founder. I regret to inform you that your prompt budget is now
+                my entertainment budget.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="odds-panel">
+        <article class="odds-card">
+          <span class="console-label">Symbol Lore</span>
+          <ul class="symbol-list">
+            <li><span>🪙</span> Venture token. Barely real, highly emotional.</li>
+            <li><span>🤖</span> Premium AI agent. Costs more than rent.</li>
+            <li><span>🔥</span> Server bill. Consumes joy on contact.</li>
+            <li><span>📉</span> Model drift. Investors call it a pivot.</li>
+            <li><span>🧠</span> Synthetic genius. Still asks for your API key.</li>
+            <li><span>💸</span> Burn rate. Nature is healing.</li>
+          </ul>
+        </article>
+
+        <article class="odds-card">
+          <span class="console-label">Payout Table</span>
+          <ul class="payout-list">
+            <li>Three matching symbols: `+90` tokens</li>
+            <li>Two matching symbols: `+30` tokens</li>
+            <li>`🤖 🤖 🧠`: `+140` tokens and temporary delusion</li>
+            <li>`🔥 💸 📉`: `-10` extra tokens for realism</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

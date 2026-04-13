@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burner 3000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Vanilla Web Slot Machine</p>
+        <h1>Token Burner 3000</h1>
+        <p class="tagline">
+          Spin the reels, spend synthetic hope, and maybe win back enough tokens
+          to fund one more unnecessary AI demo.
+        </p>
+      </header>
+
+      <main class="machine-layout">
+        <section class="machine" aria-labelledby="machine-title">
+          <div class="machine-topper">
+            <div>
+              <p class="panel-label">Casino Theme</p>
+              <h2 id="machine-title">Enterprise LLM Extraction Suite</h2>
+            </div>
+            <button id="resetButton" class="ghost-button" type="button">
+              Reset Wallet
+            </button>
+          </div>
+
+          <div class="ticker" aria-live="polite">
+            <span class="ticker-dot"></span>
+            <span id="statusLine">Wallet calibrated. Investor delusion stable.</span>
+          </div>
+
+          <section class="scoreboard" aria-label="Wallet statistics">
+            <article class="stat-card">
+              <p class="panel-label">Wallet</p>
+              <strong id="tokenBalance">120</strong>
+              <span>tokens left to burn</span>
+            </article>
+            <article class="stat-card">
+              <p class="panel-label">Spin Cost</p>
+              <strong id="spinCost">15</strong>
+              <span>tokens per hallucination</span>
+            </article>
+            <article class="stat-card">
+              <p class="panel-label">Last Payout</p>
+              <strong id="lastWin">0</strong>
+              <span>tokens clawed back</span>
+            </article>
+          </section>
+
+          <section class="reel-stage" aria-label="Slot machine reels">
+            <div class="reel-frame">
+              <div class="reel" id="reel0" aria-live="polite">PROMPT</div>
+            </div>
+            <div class="reel-frame">
+              <div class="reel" id="reel1" aria-live="polite">TOKEN</div>
+            </div>
+            <div class="reel-frame">
+              <div class="reel" id="reel2" aria-live="polite">GPU</div>
+            </div>
+          </section>
+
+          <div class="controls">
+            <button id="spinButton" class="spin-button" type="button">
+              Spend 15 Tokens
+            </button>
+            <button id="autoButton" class="ghost-button" type="button">
+              Auto Burn x3
+            </button>
+          </div>
+
+          <section class="payout-strip" aria-labelledby="payout-title">
+            <div class="payout-header">
+              <p class="panel-label">Payout Matrix</p>
+              <h3 id="payout-title">Approved Tokenomics</h3>
+            </div>
+            <div class="payout-grid">
+              <div><span>Triple TOKEN</span><strong>+180</strong></div>
+              <div><span>Triple GPU</span><strong>+140</strong></div>
+              <div><span>Triple PROMPT</span><strong>+95</strong></div>
+              <div><span>Any triple match</span><strong>+80</strong></div>
+              <div><span>Two TOKENs</span><strong>+35</strong></div>
+              <div><span>Contains BUG</span><strong>-5 dignity</strong></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="sidebar">
+          <section class="card roast-card" aria-labelledby="roast-title">
+            <p class="panel-label">Live Commentary</p>
+            <h2 id="roast-title">AI Strategy Feed</h2>
+            <p id="roastText">
+              Every spin converts your wallet directly into “platform leverage.”
+            </p>
+          </section>
+
+          <section class="card" aria-labelledby="history-title">
+            <div class="section-head">
+              <p class="panel-label">Telemetry</p>
+              <h2 id="history-title">Recent Damage</h2>
+            </div>
+            <ul id="historyList" class="history-list" aria-live="polite"></ul>
+          </section>
+
+          <section class="card" aria-labelledby="tip-title">
+            <div class="section-head">
+              <p class="panel-label">House Tip</p>
+              <h2 id="tip-title">Responsible Prompting</h2>
+            </div>
+            <p>
+              If your balance hits zero, the machine secures emergency venture
+              funding and quietly reloads your wallet.
+            </p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
