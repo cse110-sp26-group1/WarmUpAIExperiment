@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt & Circumstance Casino</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+    <main class="app-shell">
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">A regulated market for synthetic confidence</p>
+          <h1>Prompt &amp; Circumstance Casino</h1>
+          <p class="tagline">
+            Pull the lever, win fake tokens, and spend them immediately on AI products that summarize
+            your own bad decisions back to you.
+          </p>
+        </div>
+
+        <div class="hero-metrics" aria-label="Player dashboard">
+          <article class="metric-card">
+            <span class="metric-label">Wallet</span>
+            <strong id="tokenBalance">500</strong>
+            <span class="metric-detail">Tokens available for irresponsible inference</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Jackpot</span>
+            <strong id="jackpotAmount">900</strong>
+            <span class="metric-detail">Funded by every doomed startup pitch</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Context Window</span>
+            <strong id="contextMeter">100%</strong>
+            <span class="metric-detail">Shrinks whenever you ask for "one tiny tweak"</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Spin Count</span>
+            <strong id="spinCount">0</strong>
+            <span class="metric-detail">Each one legally counts as innovation</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-shell" aria-labelledby="machineTitle">
+        <div class="marquee" aria-hidden="true">
+          <span>Tokenize Everything</span>
+          <span>Alignment Optional</span>
+          <span>Hallucinations Welcome</span>
+          <span>Series B Ready</span>
+        </div>
+
+        <div class="machine-header">
+          <div>
+            <p class="eyebrow">Flagship cabinet</p>
+            <h2 id="machineTitle">The Large Slot Model</h2>
+          </div>
+          <div class="house-note" id="houseNote">House message: optimism is not a payout strategy.</div>
+        </div>
+
+        <div class="machine-body">
+          <aside class="side-panel">
+            <div class="panel-block">
+              <p class="panel-label">Bet Size</p>
+              <div class="chip-row" id="betControls" role="group" aria-label="Choose spin cost">
+                <button class="chip-button" type="button" data-bet="10">10</button>
+                <button class="chip-button is-active" type="button" data-bet="25">25</button>
+                <button class="chip-button" type="button" data-bet="50">50</button>
+              </div>
+            </div>
+
+            <div class="panel-block">
+              <p class="panel-label">Spin Economics</p>
+              <dl class="fact-list">
+                <div>
+                  <dt>Current burn</dt>
+                  <dd><span id="spinCost">25</span> tokens</dd>
+                </div>
+                <div>
+                  <dt>Best win</dt>
+                  <dd><span id="bestWin">0</span> tokens</dd>
+                </div>
+                <div>
+                  <dt>Last payout</dt>
+                  <dd><span id="lastPayout">0</span> tokens</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="panel-block">
+              <p class="panel-label">Platform Perks</p>
+              <ul class="plain-list compact">
+                <li>Uses local storage to preserve your terrible habits.</li>
+                <li>Buzzes the phone when the model "cooks."</li>
+                <li>Lets you share fabricated token success with one tap.</li>
+              </ul>
+            </div>
+          </aside>
+
+          <div class="reel-zone">
+            <div class="top-lights" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="reel-frame" aria-live="polite" aria-atomic="true">
+              <div class="reel-window">
+                <div class="reel" id="reel0">
+                  <span class="symbol-icon">🤖</span>
+                  <span class="symbol-name">Model Drift</span>
+                </div>
+              </div>
+              <div class="reel-window">
+                <div class="reel" id="reel1">
+                  <span class="symbol-icon">🪙</span>
+                  <span class="symbol-name">Token Refund</span>
+                </div>
+              </div>
+              <div class="reel-window">
+                <div class="reel" id="reel2">
+                  <span class="symbol-icon">🧠</span>
+                  <span class="symbol-name">Prompt Goblin</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="console-bar">
+              <div class="status-pill">
+                <span class="status-dot"></span>
+                <span id="statusText">System idle. Waiting for another irresponsible bet.</span>
+              </div>
+              <button id="shareButton" class="ghost-button" type="button">Share fake earnings</button>
+            </div>
+
+            <div class="controls">
+              <button id="spinButton" class="primary-button" type="button">Spin the model</button>
+              <button id="maxSpinButton" class="secondary-button" type="button">Max chaos</button>
+              <button id="resetButton" class="ghost-button" type="button">Reset wallet</button>
+            </div>
+          </div>
+
+          <aside class="side-panel">
+            <div class="panel-block roast-block">
+              <p class="panel-label">Model Output</p>
+              <p class="result-message" id="resultMessage">
+                Welcome back. The machine is eager to convert your tokens into confidence theater.
+              </p>
+            </div>
+
+            <div class="panel-block">
+              <p class="panel-label">Payout Lore</p>
+              <ul class="plain-list compact" id="payoutTable">
+                <li>3 x Sentient Spreadsheet = jackpot plus startup tears</li>
+                <li>3 x Token Refund = refund processed by vibes alone</li>
+                <li>Any 3 matching symbols = medium-sized miracle</li>
+                <li>2 x Token Refund = tiny rebate for enterprise customers</li>
+                <li>1 x AGI Soon = market cap temporarily doubles</li>
+              </ul>
+            </div>
+
+            <div class="panel-block">
+              <p class="panel-label">Activity Feed</p>
+              <div id="feed" class="feed" aria-live="polite"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

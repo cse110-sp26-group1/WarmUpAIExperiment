@@ -1,0 +1,372 @@
+:root {
+  --bg: #0f172a;
+  --bg-alt: #111827;
+  --panel: rgba(255, 248, 220, 0.09);
+  --panel-strong: rgba(255, 248, 220, 0.16);
+  --gold: #f8b400;
+  --coral: #ff6b4a;
+  --mint: #85ffc7;
+  --ink: #fff8dc;
+  --danger: #ff4d6d;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top, rgba(255, 107, 74, 0.25), transparent 28%),
+    radial-gradient(circle at 20% 20%, rgba(248, 180, 0, 0.22), transparent 22%),
+    linear-gradient(160deg, #180f2e 0%, #0f172a 44%, #081018 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.app-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 1.75rem;
+  animation: fade-up 700ms ease;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--mint);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.hero h1 {
+  margin: 0.35rem 0;
+  font-family: "Abril Fatface", serif;
+  font-size: clamp(3rem, 9vw, 5.75rem);
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+}
+
+.subtitle {
+  width: min(700px, 100%);
+  margin: 0 auto;
+  color: rgba(255, 248, 220, 0.86);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.machine {
+  position: relative;
+  overflow: hidden;
+  padding: 1.25rem;
+  border: 2px solid rgba(248, 180, 0, 0.35);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 18%),
+    linear-gradient(180deg, rgba(10, 12, 31, 0.95), rgba(13, 17, 29, 0.95));
+  box-shadow: var(--shadow);
+}
+
+.machine-top,
+.status-bar,
+.controls,
+.button-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.machine-top,
+.controls {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.marquee,
+.meter,
+.message-panel,
+.feed-section,
+.bet-panel {
+  background: var(--panel);
+  border: 1px solid rgba(255, 248, 220, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.marquee {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+}
+
+.marquee-label,
+.meter-label {
+  color: rgba(255, 248, 220, 0.72);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.mute-button,
+.primary-button,
+.secondary-button {
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.mute-button,
+.secondary-button {
+  padding: 0.85rem 1.2rem;
+  color: var(--ink);
+  background: rgba(255, 248, 220, 0.12);
+}
+
+.primary-button {
+  padding: 1rem 1.5rem;
+  color: #180f2e;
+  background: linear-gradient(135deg, var(--gold), #ffd166);
+  box-shadow: 0 10px 30px rgba(248, 180, 0, 0.25);
+}
+
+.secondary-button {
+  background: rgba(255, 107, 74, 0.2);
+}
+
+.mute-button:hover,
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+}
+
+.status-bar {
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.meter {
+  flex: 1 1 180px;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.meter strong {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+.meter-note {
+  display: block;
+  margin-top: 0.35rem;
+  color: rgba(255, 248, 220, 0.72);
+  font-size: 0.8rem;
+}
+
+.reels-frame {
+  position: relative;
+  margin: 1.25rem 0;
+  padding: 1.2rem;
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(248, 180, 0, 0.22), rgba(255, 107, 74, 0.08)),
+    rgba(0, 0, 0, 0.25);
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.04) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.reel-window {
+  position: relative;
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  border: 2px solid rgba(255, 248, 220, 0.15);
+  background:
+    radial-gradient(circle at top, rgba(133, 255, 199, 0.14), transparent 38%),
+    linear-gradient(180deg, #26153f 0%, #111827 100%);
+  overflow: hidden;
+}
+
+.reel-symbol {
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.35));
+}
+
+.reel-symbol.spinning {
+  animation: reel-bounce 180ms linear infinite;
+}
+
+.controls {
+  flex-wrap: wrap;
+}
+
+.bet-panel {
+  flex: 1 1 280px;
+  display: grid;
+  gap: 0.65rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+}
+
+#betRange {
+  width: 100%;
+  accent-color: var(--gold);
+}
+
+.button-row {
+  flex: 1 1 280px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.message-panel,
+.feed-section {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+}
+
+#resultMessage {
+  margin: 0 0 0.85rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.paytable {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: rgba(255, 248, 220, 0.78);
+  font-size: 0.85rem;
+}
+
+.ticker-feed {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.ticker-line {
+  margin: 0;
+  padding: 0.7rem 0.85rem;
+  border-left: 3px solid var(--gold);
+  background: rgba(255, 248, 220, 0.06);
+  border-radius: 12px;
+  color: rgba(255, 248, 220, 0.9);
+}
+
+.confetti-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 12px;
+  height: 18px;
+  border-radius: 4px;
+  opacity: 0;
+}
+
+.win-flash {
+  box-shadow:
+    inset 0 0 0 2px rgba(133, 255, 199, 0.45),
+    0 0 40px rgba(133, 255, 199, 0.18);
+}
+
+.loss-flash {
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 77, 109, 0.4),
+    0 0 32px rgba(255, 77, 109, 0.12);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reel-bounce {
+  from {
+    transform: translateY(-8px) scale(1.04);
+  }
+  to {
+    transform: translateY(8px) scale(0.97);
+  }
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    width: min(100% - 1rem, 42rem);
+    padding-top: 1rem;
+  }
+
+  .machine {
+    padding: 1rem;
+  }
+
+  .machine-top,
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-row {
+    justify-content: stretch;
+  }
+
+  .button-row > button {
+    width: 100%;
+  }
+
+  .reel-window {
+    min-height: 150px;
+  }
+}

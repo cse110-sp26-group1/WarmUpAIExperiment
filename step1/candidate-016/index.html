@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burner 3000</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Silicon Valley's least responsible casino</p>
+        <div class="hero-copy">
+          <h1>Token Burner 3000</h1>
+          <p class="tagline">
+            Win pretend tokens. Spend them instantly on glorious machine-generated nonsense.
+          </p>
+        </div>
+        <div class="status-grid" aria-label="Player status">
+          <article class="status-box">
+            <span class="status-label">Wallet</span>
+            <strong id="tokenBalance">240</strong>
+          </article>
+          <article class="status-box">
+            <span class="status-label">Spins</span>
+            <strong id="spinCount">0</strong>
+          </article>
+          <article class="status-box">
+            <span class="status-label">Best Win</span>
+            <strong id="bestWin">0</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-card" aria-labelledby="machineTitle">
+        <div class="machine-header">
+          <div>
+            <p class="machine-label">Model</p>
+            <h2 id="machineTitle">Large Slot Model</h2>
+          </div>
+          <div class="cost-pill">Spin Cost: 15 tokens</div>
+        </div>
+
+        <div class="lights" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="reel-frame" aria-live="polite" aria-atomic="true">
+          <div class="reel" id="reel0">
+            <span class="symbol-icon">?</span>
+            <span class="symbol-name">Awaiting Prompt</span>
+          </div>
+          <div class="reel" id="reel1">
+            <span class="symbol-icon">?</span>
+            <span class="symbol-name">Awaiting Prompt</span>
+          </div>
+          <div class="reel" id="reel2">
+            <span class="symbol-icon">?</span>
+            <span class="symbol-name">Awaiting Prompt</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="primary-button">Burn 15 Tokens</button>
+          <button id="resetButton" class="ghost-button">Reset Wallet</button>
+        </div>
+
+        <div class="response-panel">
+          <p class="response-label">Model output</p>
+          <p id="resultMessage" class="result-message">
+            Pull the lever and see whether the machine rewards you with tokens or just more vibes.
+          </p>
+        </div>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="card">
+          <h3>How The Scam Works</h3>
+          <ul class="plain-list">
+            <li>Every spin burns 15 tokens because "inference is expensive."</li>
+            <li>Match symbols to win token refunds and smug corporate praise.</li>
+            <li>Run out of tokens and the machine politely suggests another funding round.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Payout Table</h3>
+          <ul class="plain-list payout-list">
+            <li>3 x AGI Soon™ = 250 tokens</li>
+            <li>3 x Token Refund = 120 tokens</li>
+            <li>3 matching anything else = 80 tokens</li>
+            <li>2 Token Refunds = 35 tokens</li>
+            <li>1 AGI Soon™ anywhere = 20 tokens</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Machine Gossip</h3>
+          <div id="feed" class="feed" aria-live="polite">
+            <p>The machine is calm. Suspiciously calm.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
