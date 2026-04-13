@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tumbler</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">100% organic simulated intelligence casino</p>
+      <h1>Token Tumbler</h1>
+      <p class="tagline">Spin the reels. Farm imaginary tokens. Feed the machine more tokens. It is the circle of modern innovation.</p>
+    </section>
+
+    <section class="machine-panel" aria-labelledby="slot-title">
+      <div class="panel-top">
+        <div>
+          <p class="panel-label">Balance</p>
+          <p class="counter" id="token-balance">120</p>
+        </div>
+        <div>
+          <p class="panel-label">Spin Cost</p>
+          <p class="counter accent" id="spin-cost">15</p>
+        </div>
+        <div>
+          <p class="panel-label">Hype Multiplier</p>
+          <p class="counter" id="multiplier">x1</p>
+        </div>
+      </div>
+
+      <div class="machine" aria-live="polite">
+        <div class="marquee">
+          <span>prompt engineered</span>
+          <span>ethically vaporous</span>
+          <span>venture compatible</span>
+        </div>
+
+        <h2 id="slot-title">AI Revenue Simulator</h2>
+
+        <div class="reels" role="img" aria-label="Three slot machine reels">
+          <div class="reel" id="reel-0">🧠</div>
+          <div class="reel" id="reel-1">🪙</div>
+          <div class="reel" id="reel-2">🔥</div>
+        </div>
+
+        <div class="payout-grid">
+          <div>
+            <span class="combo">🪙 🪙 🪙</span>
+            <span>Seed round secured: +90 tokens</span>
+          </div>
+          <div>
+            <span class="combo">🤖 🤖 🤖</span>
+            <span>Autonomous synergy achieved: +120 tokens</span>
+          </div>
+          <div>
+            <span class="combo">💼 🧠 🔥</span>
+            <span>Deck, jargon, and panic: +60 tokens</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Spend 15 tokens</button>
+        <button id="boost-button" class="ghost-button" type="button">Buy more hype for 25</button>
+      </div>
+
+      <p class="status-line" id="status-line">The machine is warmed up and ready to monetize vibes.</p>
+
+      <section class="activity-panel" aria-labelledby="feed-title">
+        <div class="feed-header">
+          <h3 id="feed-title">Live Token Narrative</h3>
+          <button id="reset-button" class="text-button" type="button">reset economy</button>
+        </div>
+        <ul id="activity-feed" class="activity-feed"></ul>
+      </section>
+    </section>
+  </main>
+
+  <template id="feed-item-template">
+    <li class="feed-item"></li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

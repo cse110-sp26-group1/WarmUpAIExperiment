@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tug Casino</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Totally Sustainable AI Economics</p>
+      <h1>Token Tug Casino</h1>
+      <p class="tagline">
+        Win prompt tokens, lose context window dignity, and feed the hungriest slot machine this side of the inference cluster.
+      </p>
+    </section>
+
+    <section class="machine-card" aria-labelledby="machine-title">
+      <div class="machine-header">
+        <div>
+          <p class="machine-kicker">Model-Adjacent Entertainment</p>
+          <h2 id="machine-title">Spin For More Tokens</h2>
+        </div>
+        <button class="muted-button" id="themeToggle" type="button" aria-pressed="false">
+          Toggle glow
+        </button>
+      </div>
+
+      <div class="status-grid">
+        <article class="stat-panel emphasis">
+          <span class="stat-label">Wallet</span>
+          <strong class="stat-value" id="tokenCount">120</strong>
+          <span class="stat-footnote">tokens remaining for the quarter</span>
+        </article>
+        <article class="stat-panel">
+          <span class="stat-label">Spin Cost</span>
+          <strong class="stat-value">15</strong>
+          <span class="stat-footnote">because compute isn't free, allegedly</span>
+        </article>
+        <article class="stat-panel">
+          <span class="stat-label">Jackpot</span>
+          <strong class="stat-value">250</strong>
+          <span class="stat-footnote">enough for one ambitious refactor request</span>
+        </article>
+      </div>
+
+      <div class="reels-frame" role="group" aria-label="slot machine reels">
+        <div class="reel" id="reel0" aria-live="polite">404</div>
+        <div class="reel" id="reel1" aria-live="polite">GPU</div>
+        <div class="reel" id="reel2" aria-live="polite">LOL</div>
+      </div>
+
+      <div class="controls">
+        <button class="spin-button" id="spinButton" type="button">Spend 15 Tokens</button>
+        <button class="secondary-button" id="freebieButton" type="button">Claim Daily Hallucination Bonus</button>
+      </div>
+
+      <p class="message" id="message" aria-live="polite">
+        The house recommends emotionally preparing for mediocre output.
+      </p>
+
+      <section class="feed" aria-labelledby="feed-title">
+        <div class="feed-header">
+          <h3 id="feed-title">Telemetry Feed</h3>
+          <span class="feed-pill" id="streakPill">No streak</span>
+        </div>
+        <ul id="eventLog" class="event-log"></ul>
+      </section>
+    </section>
+  </main>
+
+  <template id="logTemplate">
+    <li class="event-item">
+      <span class="event-time"></span>
+      <span class="event-copy"></span>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

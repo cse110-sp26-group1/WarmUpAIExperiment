@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tug Casino</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Tokenized Entertainment Platform</p>
+      <h1>Prompt & Pull</h1>
+      <p class="tagline">
+        Feed the machine your precious tokens and hope the algorithm briefly respects you.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI token slot machine">
+      <div class="status-bar">
+        <div class="status-card">
+          <span class="label">Wallet</span>
+          <strong id="tokens">120</strong>
+          <span class="meta">tokens remaining</span>
+        </div>
+        <div class="status-card">
+          <span class="label">Spin Cost</span>
+          <strong id="cost">15</strong>
+          <span class="meta">tokens per hallucination</span>
+        </div>
+        <div class="status-card jackpot-card">
+          <span class="label">Best Hit</span>
+          <strong id="best-win">0</strong>
+          <span class="meta">tokens extracted</span>
+        </div>
+      </div>
+
+      <div class="reels-frame">
+        <div class="reels" role="img" aria-live="polite" aria-label="Slot machine reels">
+          <div class="reel" id="reel-0">🤖</div>
+          <div class="reel" id="reel-1">💸</div>
+          <div class="reel" id="reel-2">🔥</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Spend 15 Tokens</button>
+        <button id="reset-button" class="reset-button" type="button">Reboot Hype Cycle</button>
+      </div>
+
+      <div class="message-board">
+        <p id="message" class="message">
+          Welcome to the premier token disposal experience.
+        </p>
+      </div>
+
+      <section class="payouts" aria-label="Payout table">
+        <h2>Payout Table</h2>
+        <ul>
+          <li><span>🤖 🤖 🤖</span><strong>+120</strong><em>The model finally aligned with your business model.</em></li>
+          <li><span>💸 💸 💸</span><strong>+90</strong><em>Investor deck approved. Reality still pending.</em></li>
+          <li><span>🔥 🔥 🔥</span><strong>+75</strong><em>Viral demo, deeply unserious margins.</em></li>
+          <li><span>🧠 🧠 🧠</span><strong>+65</strong><em>Benchmark supremacy for at least six minutes.</em></li>
+          <li><span>👀 👀 👀</span><strong>+55</strong><em>Someone on social media called it “sentient.”</em></li>
+          <li><span>Any pair</span><strong>+20</strong><em>Two reels agree, which is more than most AI roadmaps.</em></li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

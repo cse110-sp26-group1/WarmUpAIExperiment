@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tumbler 9000</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Silicon Valley's least responsible casino</p>
+        <h1>Token Tumbler 9000</h1>
+        <p class="subtitle">
+          Pull the lever, harvest imaginary AI tokens, then immediately spend them on
+          bigger models, longer context windows, and premium hallucinations.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="machine-top">
+          <div class="meter">
+            <span class="meter-label">Wallet</span>
+            <strong id="tokenBalance">120</strong>
+            <span class="meter-unit">tokens</span>
+          </div>
+          <div class="meter">
+            <span class="meter-label">Spin Cost</span>
+            <strong id="spinCost">15</strong>
+            <span class="meter-unit">tokens</span>
+          </div>
+          <div class="meter">
+            <span class="meter-label">Last Payout</span>
+            <strong id="lastWin">0</strong>
+            <span class="meter-unit">tokens</span>
+          </div>
+        </div>
+
+        <div class="reels" role="group" aria-label="Slot machine reels">
+          <div class="reel-window">
+            <div class="reel" id="reel1" aria-live="polite">GPU</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" id="reel2" aria-live="polite">GPU</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" id="reel3" aria-live="polite">GPU</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="spinButton" class="spin-button" type="button">Spin the Hype Cycle</button>
+          <button id="cashOutButton" class="secondary-button" type="button">Burn 40 Tokens</button>
+        </div>
+
+        <p id="status" class="status" aria-live="polite">
+          Welcome back, founder. Your runway is now measured in tokens.
+        </p>
+
+        <section class="payouts" aria-label="Payout rules">
+          <h2>Payout Table</h2>
+          <ul>
+            <li><span>Three GPUs</span><strong>Jackpot: +140</strong></li>
+            <li><span>Three AGIs</span><strong>Singularity bonus: +110</strong></li>
+            <li><span>Three Prompts</span><strong>Vibe coding streak: +75</strong></li>
+            <li><span>Any pair</span><strong>Seed round: +30</strong></li>
+            <li><span>No match</span><strong>Investor update: +0</strong></li>
+          </ul>
+        </section>
+      </section>
+
+      <section class="ledger">
+        <div class="ledger-card">
+          <h2>Token Sink</h2>
+          <p>
+            Every click to burn tokens represents another urgent purchase:
+            autonomous agents, premium embeddings, and one suspiciously expensive
+            "enterprise AI transformation" deck.
+          </p>
+        </div>
+        <div class="ledger-card">
+          <h2>Session Stats</h2>
+          <dl>
+            <div>
+              <dt>Spins</dt>
+              <dd id="spinCount">0</dd>
+            </div>
+            <div>
+              <dt>Tokens Burned</dt>
+              <dd id="tokensBurned">0</dd>
+            </div>
+            <div>
+              <dt>Biggest Win</dt>
+              <dd id="bestWin">0</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

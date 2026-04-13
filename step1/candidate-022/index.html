@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tugger 3000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Autonomous Casino Prototype</p>
+      <h1>Token Tugger 3000</h1>
+      <p class="tagline">
+        Insert your dignity. Win imaginary tokens. Lose them instantly to premium AI features
+        like "slightly better autocomplete" and "emotionally available search results."
+      </p>
+
+      <div class="status-grid" aria-label="Game status">
+        <article class="status-card">
+          <span class="status-label">Wallet</span>
+          <strong id="tokenCount">120</strong>
+          <span class="status-note">tokens remaining</span>
+        </article>
+        <article class="status-card">
+          <span class="status-label">Spin Cost</span>
+          <strong>15</strong>
+          <span class="status-note">tokens per hallucination</span>
+        </article>
+        <article class="status-card">
+          <span class="status-label">Best Jackpot</span>
+          <strong id="bestWin">0</strong>
+          <span class="status-note">stored locally</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="machine-card" aria-labelledby="machineTitle">
+      <div class="machine-topper">
+        <p class="eyebrow">Model Confidence Engine</p>
+        <h2 id="machineTitle">Synthetic Fortune Reels</h2>
+      </div>
+
+      <div class="reels-frame" role="img" aria-label="Three spinning slot reels">
+        <div class="reel-window"><div class="reel" id="reel0">🤖</div></div>
+        <div class="reel-window"><div class="reel" id="reel1">🔥</div></div>
+        <div class="reel-window"><div class="reel" id="reel2">🪙</div></div>
+      </div>
+
+      <div class="button-row">
+        <button id="spinButton" class="spin-button" type="button">Spin The Model</button>
+        <button id="boostButton" class="ghost-button" type="button">Buy More Tokens</button>
+      </div>
+
+      <p id="resultLine" class="result-line" aria-live="polite">
+        Welcome back, valued user. Please enjoy responsibly fabricated wealth.
+      </p>
+
+      <div class="payout-card">
+        <h3>Payout Lore</h3>
+        <ul>
+          <li><span>🪙 🪙 🪙</span> Audit passed. Collect 120 tokens.</li>
+          <li><span>🤖 🤖 🤖</span> Fully autonomous buzzword cascade. Collect 90 tokens.</li>
+          <li><span>🔥 🔥 🔥</span> Viral launch thread energy. Collect 70 tokens.</li>
+          <li><span>Any pair</span> Investors are intrigued. Collect 25 tokens.</li>
+          <li><span>No match</span> Congratulations, you purchased "AI credits."</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <template id="messageTemplate">
+    <span class="toast"></span>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
