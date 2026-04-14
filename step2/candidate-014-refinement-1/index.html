@@ -1,74 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Token Extractor 3000</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <main class="machine-shell">
-    <section class="machine" aria-labelledby="title">
-      <!-- Header copy sells the joke: you spend tokens and hope the AI gives value back. -->
-      <p class="eyebrow">Totally Fair Generative Gambling</p>
-      <h1 id="title">AI Token Extractor 3000</h1>
-      <p class="subtitle">
-        Feed the model tokens. Pray it returns something more useful than "Here are 12 bullet points."
-      </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tilter 3000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Satirical Productivity Casino</p>
+        <h1>Token Tilter 3000</h1>
+        <p class="intro">
+          Win synthetic glory, spend premium tokens, and discover whether your
+          bankroll survives the next "minor" model upgrade.
+        </p>
 
-      <!-- Simple counters keep the game loop readable without extra UI clutter. -->
-      <div class="scoreboard" aria-label="Token counters">
-        <article class="stat-card">
-          <span class="stat-label">Your Tokens</span>
-          <strong class="stat-value" id="tokenBalance">120</strong>
-        </article>
-        <article class="stat-card">
-          <span class="stat-label">Spin Cost</span>
-          <strong class="stat-value">15</strong>
-        </article>
-        <article class="stat-card">
-          <span class="stat-label">Last Payout</span>
-          <strong class="stat-value" id="lastPayout">0</strong>
-        </article>
-      </div>
-
-      <!-- Each reel window is populated by JavaScript with a scrolling strip of symbols. -->
-      <section class="slot-panel" aria-label="Slot machine reels">
-        <div class="reel-frame">
-          <div class="reel-window" id="reelWindow1"></div>
-        </div>
-        <div class="reel-frame">
-          <div class="reel-window" id="reelWindow2"></div>
-        </div>
-        <div class="reel-frame">
-          <div class="reel-window" id="reelWindow3"></div>
+        <div class="status-grid" aria-label="Game status">
+          <article class="status-panel">
+            <span class="label">Wallet</span>
+            <strong id="tokenBalance">1200</strong>
+            <span class="hint">freshly invoiced tokens</span>
+          </article>
+          <article class="status-panel">
+            <span class="label">Spin Cost</span>
+            <strong id="spinCost">90</strong>
+            <span class="hint">per emotionally risky pull</span>
+          </article>
+          <article class="status-panel">
+            <span class="label">Jackpot</span>
+            <strong id="jackpotValue">1500</strong>
+            <span class="hint">plus one unhelpful benchmark chart</span>
+          </article>
         </div>
       </section>
 
-      <!-- Primary controls: spin to play, reset to restore the starting balance. -->
-      <div class="actions">
-        <button id="spinButton" type="button">Spend Tokens</button>
-        <button id="resetButton" type="button" class="ghost-button">Reset Wallet</button>
-      </div>
+      <section class="machine-card" aria-labelledby="machineTitle">
+        <div class="machine-topper">
+          <div>
+            <p class="eyebrow">Prompt-Powered Revenue Engine</p>
+            <h2 id="machineTitle">Pull For Tokens</h2>
+          </div>
+          <div class="lights" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
 
-      <p class="message" id="message" aria-live="polite">
-        Three matching symbols means the AI accidentally shipped a useful answer.
-      </p>
+        <div class="reels-frame">
+          <div class="reels" aria-live="polite">
+            <div class="reel" id="reel0">&#129302;</div>
+            <div class="reel" id="reel1">&#129689;</div>
+            <div class="reel" id="reel2">&#128200;</div>
+          </div>
+        </div>
 
-      <!-- The payout table makes the joke legible and explains the scoring at a glance. -->
-      <section class="payouts" aria-labelledby="payoutTitle">
-        <h2 id="payoutTitle">Payout Table</h2>
-        <ul>
-          <li><span>3x Jackpot.json</span><strong>+140 tokens</strong></li>
-          <li><span>3x Hallucination</span><strong>+65 tokens</strong></li>
-          <li><span>3x GPU Fan</span><strong>+45 tokens</strong></li>
-          <li><span>Any pair</span><strong>+20 tokens</strong></li>
-          <li><span>No match</span><strong>0 tokens and mild regret</strong></li>
-        </ul>
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">
+            Burn Tokens
+          </button>
+          <button id="boostButton" class="ghost-button" type="button">
+            Buy "Pro" Spin
+          </button>
+        </div>
+
+        <p id="message" class="message">
+          Your AI startup has pivoted to gambling. Investors call this synergy.
+        </p>
+
+        <div class="payouts">
+          <h3>Payout Lore</h3>
+          <ul>
+            <li><span>&#129689; &#129689; &#129689;</span><strong>+1500 tokens</strong></li>
+            <li><span>&#129302; &#129302; &#129302;</span><strong>+650 tokens</strong></li>
+            <li><span>&#128200; &#128200; &#128200;</span><strong>+400 tokens</strong></li>
+            <li><span>Three matching anything</span><strong>+250 tokens</strong></li>
+            <li><span>Two matching</span><strong>refund therapy only</strong></li>
+          </ul>
+        </div>
       </section>
-    </section>
-  </main>
 
-  <script src="script.js"></script>
-</body>
+      <aside class="feed-card">
+        <div class="feed-header">
+          <p class="eyebrow">Live Platform Feed</p>
+          <h2>Executive Commentary</h2>
+        </div>
+        <ul id="eventFeed" class="event-feed" aria-live="polite"></ul>
+      </aside>
+    </main>
+
+    <template id="feedItemTemplate">
+      <li class="feed-item"></li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
 </html>

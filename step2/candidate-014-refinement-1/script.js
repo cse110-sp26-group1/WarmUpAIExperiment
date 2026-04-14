@@ -1,190 +1,250 @@
-// Each symbol teases a different flavor of AI nonsense.
+// Each symbol is encoded with Unicode escapes so the slot machine stays
+// readable even in editors or terminals that do not display emoji cleanly.
 const symbols = [
-  { emoji: "🧠", label: "Hallucination" },
-  { emoji: "🔥", label: "GPU Fan" },
-  { emoji: "📎", label: "Prompt Loop" },
-  { emoji: "🪙", label: "Token Refund" },
-  { emoji: "📦", label: "Jackpot.json" },
-  { emoji: "🤖", label: "Alignment Tax" }
+  "\u{1FA99}",
+  "\u{1F916}",
+  "\u{1F4C8}",
+  "\u{1F9E0}",
+  "\u{1F525}",
+  "\u{1F9FE}"
 ];
 
-const spinCost = 15;
-const startingBalance = 120;
-const reelHeight = () => document.querySelector(".reel-frame").clientHeight;
-const reelWindows = [
-  document.getElementById("reelWindow1"),
-  document.getElementById("reelWindow2"),
-  document.getElementById("reelWindow3")
+const state = {
+  balance: 1200,
+  baseSpinCost: 90,
+  jackpot: 1500,
+  isSpinning: false,
+  boostMode: false
+};
+
+// Cache the reel elements once so each spin only updates text content.
+const reels = [
+  document.getElementById("reel0"),
+  document.getElementById("reel1"),
+  document.getElementById("reel2")
 ];
 
-const tokenBalanceEl = document.getElementById("tokenBalance");
-const lastPayoutEl = document.getElementById("lastPayout");
-const messageEl = document.getElementById("message");
+const tokenBalance = document.getElementById("tokenBalance");
+const spinCost = document.getElementById("spinCost");
+const jackpotValue = document.getElementById("jackpotValue");
+const message = document.getElementById("message");
+const eventFeed = document.getElementById("eventFeed");
+const feedItemTemplate = document.getElementById("feedItemTemplate");
 const spinButton = document.getElementById("spinButton");
-const resetButton = document.getElementById("resetButton");
+const boostButton = document.getElementById("boostButton");
 
-let balance = startingBalance;
-let isSpinning = false;
+// Remember where each reel is so the animation can advance in order instead of
+// swapping to unrelated random symbols every tick.
+const reelPositions = [1, 0, 2];
 
-// Build one tall strip per reel so we can animate it like a real rolling cylinder.
-function createReelStrip(finalSymbolIndex) {
-  const strip = document.createElement("div");
-  strip.className = "reel-strip";
+const quips = {
+  nearMiss: [
+    "Two matching reels. The AI says that counts as 94% accurate.",
+    "You almost won, which is how enterprise pricing gets justified.",
+    "So close. A dashboard will still describe this as exceptional throughput."
+  ],
+  noMatch: [
+    "No match. Somewhere a chatbot called this an edge case.",
+    "That spin burned tokens faster than a team adding agents to a slide deck.",
+    "The model hallucinated a jackpot and invoiced you for confidence."
+  ],
+  broke: [
+    "Wallet empty. Time to pivot into consulting about responsible token usage.",
+    "You are out of tokens, but rich in learnings and vague product vision.",
+    "Bankrupt. Finance suggests calling the loss a strategic retraining cycle."
+  ]
+};
 
-  // Repeat random filler symbols to create the illusion of continuous motion.
-  for (let i = 0; i < 16; i += 1) {
-    const symbol = symbols[Math.floor(Math.random() * symbols.length)];
-    strip.appendChild(createSymbolCell(symbol));
-  }
-
-  // Finish on the winning or losing symbol we actually want to show.
-  strip.appendChild(createSymbolCell(symbols[finalSymbolIndex]));
-  return strip;
+function currentSpinCost() {
+  return state.boostMode ? state.baseSpinCost + 60 : state.baseSpinCost;
 }
 
-function createSymbolCell(symbol) {
-  const cell = document.createElement("div");
-  cell.className = "symbol";
-  cell.innerHTML = `
-    <span class="symbol-emoji" aria-hidden="true">${symbol.emoji}</span>
-    <span class="symbol-label">${symbol.label}</span>
-  `;
-  return cell;
+function formatTokens(value) {
+  return value.toLocaleString();
 }
 
 function setMessage(text, tone = "") {
-  messageEl.textContent = text;
-  messageEl.className = `message ${tone}`.trim();
+  message.textContent = text;
+  message.className = `message ${tone}`.trim();
 }
 
-function updateStats(lastPayout = 0) {
-  tokenBalanceEl.textContent = String(balance);
-  lastPayoutEl.textContent = String(lastPayout);
+function addFeedEntry(text) {
+  const item = feedItemTemplate.content.firstElementChild.cloneNode(true);
+  item.innerHTML = text;
+  eventFeed.prepend(item);
+
+  // Trim older messages so the feed stays punchy instead of growing forever.
+  while (eventFeed.children.length > 6) {
+    eventFeed.lastElementChild.remove();
+  }
 }
 
-function pickResults() {
-  return Array.from({ length: 3 }, () => Math.floor(Math.random() * symbols.length));
+function updateDisplay() {
+  tokenBalance.textContent = formatTokens(state.balance);
+  spinCost.textContent = formatTokens(currentSpinCost());
+  jackpotValue.textContent = formatTokens(state.jackpot);
+  boostButton.textContent = state.boostMode ? 'Disable "Pro" Spin' : 'Buy "Pro" Spin';
 }
 
-function calculatePayout(results) {
-  const counts = results.reduce((map, value) => {
-    map[value] = (map[value] || 0) + 1;
-    return map;
+function advanceReel(index) {
+  reelPositions[index] = (reelPositions[index] + 1) % symbols.length;
+  reels[index].textContent = symbols[reelPositions[index]];
+}
+
+function scoreSpin(result) {
+  const counts = result.reduce((acc, symbol) => {
+    acc[symbol] = (acc[symbol] || 0) + 1;
+    return acc;
   }, {});
 
-  const matchedCount = Math.max(...Object.values(counts));
-  const first = results[0];
+  const values = Object.values(counts).sort((a, b) => b - a);
+  const isThreeMatch = values[0] === 3;
+  const isTwoMatch = values[0] === 2;
 
-  if (matchedCount === 3 && symbols[first].label === "Jackpot.json") {
-    return 140;
+  if (isThreeMatch) {
+    const [symbol] = Object.keys(counts);
+
+    if (symbol === symbols[0]) {
+      return {
+        payout: state.jackpot,
+        tone: "win",
+        text: "Triple coins. Congratulations, the casino accidentally respected your budget."
+      };
+    }
+
+    if (symbol === symbols[1]) {
+      return {
+        payout: 650,
+        tone: "win",
+        text: "Three robots. The board calls this fully autonomous revenue."
+      };
+    }
+
+    if (symbol === symbols[2]) {
+      return {
+        payout: 400,
+        tone: "win",
+        text: "Triple charts. Nobody knows why the graph is up, but tokens are flowing."
+      };
+    }
+
+    return {
+      payout: 250,
+      tone: "win",
+      text: "Three of a kind. A keynote presenter just used the word disruption."
+    };
   }
 
-  if (matchedCount === 3 && symbols[first].label === "Hallucination") {
-    return 65;
+  if (isTwoMatch) {
+    return {
+      payout: 0,
+      tone: "loss",
+      text: quips.nearMiss[Math.floor(Math.random() * quips.nearMiss.length)]
+    };
   }
 
-  if (matchedCount === 3 && symbols[first].label === "GPU Fan") {
-    return 45;
-  }
-
-  if (matchedCount >= 2) {
-    return 20;
-  }
-
-  return 0;
+  return {
+    payout: 0,
+    tone: "loss",
+    text: quips.noMatch[Math.floor(Math.random() * quips.noMatch.length)]
+  };
 }
 
-function describeOutcome(payout, results) {
-  if (payout >= 140) {
-    return 'Miracle. The AI returned "exactly what you asked for."';
-  }
-
-  if (payout >= 65) {
-    return "Triple Hallucination. Confidently wrong, financially right.";
-  }
-
-  if (payout >= 45) {
-    return "The GPUs are screaming, but at least they paid out.";
-  }
-
-  if (payout > 0) {
-    return `Two reels matched. The model calls that "close enough."`;
-  }
-
-  return `No match: ${results.map((index) => symbols[index].label).join(", ")}. Classic AI benchmark behavior.`;
+function setControlsDisabled(disabled) {
+  spinButton.disabled = disabled;
+  boostButton.disabled = disabled;
 }
 
-function animateReel(reelWindow, finalSymbolIndex, delayMs) {
+function spinReel(index, steps, delay) {
   return new Promise((resolve) => {
-    const strip = createReelStrip(finalSymbolIndex);
-    reelWindow.replaceChildren(strip);
+    let remainingSteps = steps;
+    const interval = setInterval(() => {
+      advanceReel(index);
+      remainingSteps -= 1;
 
-    const itemHeight = reelHeight();
-    const fillerCount = strip.children.length - 1;
-    const finalOffset = -(fillerCount * itemHeight);
-
-    // Start above the visible frame so the first animation frame already feels in motion.
-    strip.style.transform = "translateY(0)";
-
-    requestAnimationFrame(() => {
-      strip.style.transition = `transform ${1300 + delayMs}ms cubic-bezier(0.16, 0.84, 0.22, 1)`;
-      strip.style.transform = `translateY(${finalOffset}px)`;
-    });
-
-    window.setTimeout(() => {
-      // Replace the tall animated strip with one static cell after the motion settles.
-      reelWindow.replaceChildren(createReelStrip(finalSymbolIndex).lastElementChild);
-      resolve();
-    }, 1400 + delayMs);
+      if (remainingSteps <= 0) {
+        clearInterval(interval);
+        reels[index].classList.remove("spinning");
+        resolve(reels[index].textContent);
+      }
+    }, delay);
   });
 }
 
 async function spin() {
-  if (isSpinning) {
+  const cost = currentSpinCost();
+
+  if (state.isSpinning) {
     return;
   }
 
-  if (balance < spinCost) {
-    setMessage("You are out of tokens. Even the AI says to reset your wallet.", "empty");
+  if (state.balance < cost) {
+    setMessage(quips.broke[Math.floor(Math.random() * quips.broke.length)], "loss");
+    addFeedEntry("<strong>Billing Update:</strong> insufficient tokens for another act of courage.");
     return;
   }
 
-  isSpinning = true;
-  spinButton.disabled = true;
-  balance -= spinCost;
-  updateStats(0);
-  setMessage("Feeding 15 fresh tokens into the machine...", "");
+  state.isSpinning = true;
+  state.balance -= cost;
+  updateDisplay();
+  setControlsDisabled(true);
+  setMessage("Spinning... please wait while the model monetizes suspense.");
 
-  const results = pickResults();
-  await Promise.all(
-    reelWindows.map((reelWindow, index) => animateReel(reelWindow, results[index], index * 180))
+  // Fire all reels together, then let them stop one after another to make the
+  // motion feel like a real cabinet instead of three isolated text swaps.
+  reels.forEach((reel) => reel.classList.add("spinning"));
+  const result = await Promise.all(
+    reels.map((_, index) => spinReel(index, 16 + index * 7, 70 + index * 10))
   );
 
-  const payout = calculatePayout(results);
-  balance += payout;
-  updateStats(payout);
+  const outcome = scoreSpin(result);
+  state.balance += outcome.payout;
 
-  if (payout > 0) {
-    setMessage(describeOutcome(payout, results), "win");
-  } else {
-    setMessage(describeOutcome(payout, results), "lose");
+  if (outcome.payout === state.jackpot) {
+    state.jackpot += 250;
   }
 
-  spinButton.disabled = false;
-  isSpinning = false;
+  if (state.boostMode) {
+    state.jackpot += 50;
+  }
+
+  setMessage(outcome.text, outcome.tone);
+  updateDisplay();
+  addFeedEntry(
+    `<strong>${result.join(" ")}</strong> paid <strong>${formatTokens(outcome.payout)}</strong> tokens. ${outcome.text}`
+  );
+
+  setControlsDisabled(false);
+  state.isSpinning = false;
 }
 
-function resetGame() {
-  balance = startingBalance;
-  updateStats(0);
-  setMessage("Wallet restored. Ready to waste tokens with renewed optimism.", "");
-  reelWindows.forEach((reelWindow, index) => {
-    reelWindow.replaceChildren(createSymbolCell(symbols[index]));
-  });
+function toggleBoost() {
+  if (state.isSpinning) {
+    return;
+  }
+
+  state.boostMode = !state.boostMode;
+  setMessage(
+    state.boostMode
+      ? 'Pro spin enabled. Costs more, sounds smarter, and reassures management.'
+      : "Pro spin disabled. Back to regular-grade speculative computing."
+  );
+  addFeedEntry(
+    state.boostMode
+      ? '<strong>Monetization:</strong> "Pro" mode enabled for premium confidence.'
+      : "<strong>Monetization:</strong> reverted to baseline token combustion."
+  );
+  updateDisplay();
 }
 
 spinButton.addEventListener("click", spin);
-resetButton.addEventListener("click", resetGame);
+boostButton.addEventListener("click", toggleBoost);
 
-// Populate the machine with a clean initial state on page load.
-resetGame();
+// Sync the initial screen with the known reel order before the first spin.
+reels.forEach((reel, index) => {
+  reel.textContent = symbols[reelPositions[index]];
+});
+
+addFeedEntry("<strong>Launch:</strong> Token Tilter 3000 is live and fiscally irresponsible.");
+addFeedEntry("<strong>Advice:</strong> if you win big, call it emergent intelligence.");
+updateDisplay();
