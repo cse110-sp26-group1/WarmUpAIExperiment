@@ -68,8 +68,6 @@ A few of the files interpreted "game history" as the history of slot machines ra
 ### Going Forward
 We decided to continue with **Candidates 14 and 20**, since they had good UI and features. We felt that **Candidate 17** became overcomplicated.
 
-## TODO
-CHECK TOKENS
 ### Average Token Usage 
 The Average token usage across the two candidates is 5,000 tokens
 
@@ -122,3 +120,8 @@ Used 6,527 tokens
 ## Final Outcome
 
 After multiple rounds of refinement, we selected **Candidate 20** as the strongest final version. It best balanced UI quality, AI-themed humor, documentation, sound effects, live activity feed functionality, and overall completeness. 
+
+## Token Usage
+
+We used codex two diffrent ways (The application and cli). We noticed when we used the app, it took a longer time which also used
+more tokens in result. But when we used the codex via cli, it used less tokens and yielded us a shorter time. 
