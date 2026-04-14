@@ -2,7 +2,7 @@
 
 ### Our top 2 and why we picked them:
 
-Candidates 14 and 20 were our final two. We chose these because they have good UI and features, 17 became overconcluded.
+Candidates **14** and **20** were our final two. We chose these because they have good UI and features, 17 became overconcluded.
 
 ### Other notes
 

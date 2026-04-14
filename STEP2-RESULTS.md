@@ -2,7 +2,7 @@
 
 ### Our top 3 and why we picked them:
 
-Candidates 20, 14, and 17 were our top 3. We chose these because the others were fairly worse, though there were noticeable mistakes across all of them due to the prompts not being specific enough.
+Candidates **20**, **14**, and **17** were our top 3. We chose these because the others were fairly worse, though there were noticeable mistakes across all of them due to the prompts not being specific enough.
 
 We chose these because:
 
