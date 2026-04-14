@@ -1,3 +1,11 @@
+/*
+  File: script.js
+  Purpose: Powers the Prompt & Circumstance Casino slot machine, including state management,
+  reel animation, scoring, audio, haptics, sharing, and persistence.
+  Notes: The gameplay logic remains intact while the UI grows around it, which keeps the
+  implementation aligned with the requirement to add features without removing behavior.
+*/
+
 const STORAGE_KEY = "prompt-circumstance-casino-state";
 const STARTING_TOKENS = 500;
 const STARTING_JACKPOT = 900;
