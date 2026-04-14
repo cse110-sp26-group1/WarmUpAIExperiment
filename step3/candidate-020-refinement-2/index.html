@@ -1,0 +1,188 @@
+<!--
+  File: index.html
+  Purpose: Defines the Token Burner 3000 slot machine interface, including the
+  scoreboard, reels, token sinks, and a short history section about slot games.
+  Notes: This document keeps the original gameplay structure intact while
+  providing semantic sections and inline documentation for maintainability.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burner 3000</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <!-- Intro copy sets the joke before the user reaches the machine UI. -->
+      <section class="hero">
+        <p class="eyebrow">Silicon Valley's favorite carnival ride</p>
+        <h1>Token Burner 3000</h1>
+        <p class="intro">
+          Pull the lever, win fake AI credits, and immediately spend them on
+          deeply unnecessary "intelligence."
+        </p>
+      </section>
+
+      <!-- Main machine contains the scoreboard, reels, controls, and spending sinks. -->
+      <section class="machine" aria-label="AI slot machine">
+        <div class="marquee">
+          <span>Guaranteed to monetize your curiosity</span>
+          <span>Now with 100% more synthetic confidence</span>
+          <span>Every jackpot funds another buzzword</span>
+        </div>
+
+        <div class="stats" aria-label="Scoreboard">
+          <article class="stat-card">
+            <span class="stat-label">Wallet</span>
+            <strong id="token-balance">120</strong>
+            <span class="stat-note">tokens left to burn</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Spin Cost</span>
+            <strong id="spin-cost">15</strong>
+            <span class="stat-note">per consultation</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Lifetime Waste</span>
+            <strong id="lifetime-spent">0</strong>
+            <span class="stat-note">tokenized regrets</span>
+          </article>
+        </div>
+
+        <div class="reel-frame">
+          <!-- Each reel shows one visible symbol at a time; JS swaps symbols during spin. -->
+          <div class="reels" role="img" aria-label="Three slot reels">
+            <div class="reel" data-reel="0">
+              <div class="symbol" id="reel-0">🤖</div>
+            </div>
+            <div class="reel" data-reel="1">
+              <div class="symbol" id="reel-1">🔥</div>
+            </div>
+            <div class="reel" data-reel="2">
+              <div class="symbol" id="reel-2">🪙</div>
+            </div>
+          </div>
+          <!-- Primary actions sit next to the reels like a compact control panel. -->
+          <div class="lever-column">
+            <button id="spin-button" class="spin-button">Pull Lever</button>
+            <button id="cashout-button" class="secondary-button">
+              Sell Soul
+            </button>
+          </div>
+        </div>
+
+        <section class="results" aria-live="polite">
+          <p id="status-line" class="status-line">
+            Welcome back. Your wallet looks dangerously solvent.
+          </p>
+          <p id="prompt-line" class="prompt-line">
+            Press the lever and let the machine pretend to understand you.
+          </p>
+        </section>
+
+        <!-- Optional purchases let the player immediately waste any winnings. -->
+        <section class="upgrades" aria-label="Token sink">
+          <h2>Instantly Waste Your Winnings</h2>
+          <div class="upgrade-grid">
+            <button class="upgrade-card" data-upgrade="hallucination">
+              <span class="upgrade-name">Hallucination Booster</span>
+              <span class="upgrade-cost">20 tokens</span>
+              <span class="upgrade-copy">Adds confidence, removes accuracy.</span>
+            </button>
+            <button class="upgrade-card" data-upgrade="deck">
+              <span class="upgrade-name">Pitch Deck Generator</span>
+              <span class="upgrade-cost">35 tokens</span>
+              <span class="upgrade-copy">Turns three nouns into a seed round.</span>
+            </button>
+            <button class="upgrade-card" data-upgrade="agent">
+              <span class="upgrade-name">Autonomous Intern</span>
+              <span class="upgrade-cost">50 tokens</span>
+              <span class="upgrade-copy">Schedules mistakes at machine speed.</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="ledger">
+          <div>
+            <span class="ledger-label">Biggest jackpot</span>
+            <strong id="best-win">0</strong>
+          </div>
+          <div>
+            <span class="ledger-label">Current streak</span>
+            <strong id="streak-count">0</strong>
+          </div>
+          <div>
+            <span class="ledger-label">Model mood</span>
+            <strong id="machine-mood">Smug</strong>
+          </div>
+        </section>
+      </section>
+
+      <!-- History section adds context for the genre without interrupting gameplay. -->
+      <section class="history-panel" aria-labelledby="history-heading">
+        <p class="history-kicker">A brief detour before your next bad decision</p>
+        <h2 id="history-heading">Slot Machine History, Compressed for Modern Attention Spans</h2>
+        <p class="history-intro">
+          Long before AI products started converting curiosity into monthly
+          invoices, slot machines were already perfecting the art of tiny wins,
+          loud lights, and optimistic math.
+        </p>
+
+        <div class="history-grid">
+          <article class="history-card">
+            <h3>1890s</h3>
+            <p>
+              Early mechanical gambling devices appeared in saloons, proving
+              that people would happily trust spinning symbols long before they
+              trusted recommendation algorithms.
+            </p>
+          </article>
+          <article class="history-card">
+            <h3>1895</h3>
+            <p>
+              Charles Fey&apos;s Liberty Bell machine popularized the three-reel
+              layout, a format so effective that even today&apos;s digital systems
+              still imitate its drama.
+            </p>
+          </article>
+          <article class="history-card">
+            <h3>1900s-1960s</h3>
+            <p>
+              Manufacturers iterated on fruit symbols, payouts, and automated
+              mechanics, steadily refining the feedback loop that modern apps
+              now call engagement.
+            </p>
+          </article>
+          <article class="history-card">
+            <h3>1970s</h3>
+            <p>
+              Video slot machines arrived, replacing some gears with screens and
+              software. The machine got smarter, but not in a way that helped
+              the player.
+            </p>
+          </article>
+          <article class="history-card">
+            <h3>1990s-2000s</h3>
+            <p>
+              Online casinos carried the format onto the web, where animated
+              reels and persistent accounts made token burning a 24-hour
+              international service.
+            </p>
+          </article>
+          <article class="history-card">
+            <h3>Now</h3>
+            <p>
+              We have AI-themed slot satire instead: same spinning suspense,
+              same dopamine choreography, just with extra jargon and a stronger
+              belief that tokens will solve everything.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
