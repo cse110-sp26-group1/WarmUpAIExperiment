@@ -1,0 +1,6 @@
+This is the previous prompt as context: 
+"Create a slot machine app that uses vanilla web technology like HTML, CSS, 
+JavaScript, and platform APIs. The slot machine should make fun of AI, as in 
+you are winning tokens and spending tokens." Make sure you include code documentation 
+in each file with JSDocs commenting for each JS function. Make sure you include functionality
+for sound effects. Remove the section about game history and add a live game activity feed. Code like a senior engineer.
