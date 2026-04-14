@@ -119,9 +119,8 @@ Used 6,527 tokens
 
 ## Final Outcome
 
-After multiple rounds of refinement, we selected **Candidate 20** as the strongest final version. It best balanced UI quality, AI-themed humor, documentation, sound effects, live activity feed functionality, and overall completeness. 
+After multiple rounds of refinement, we selected **Candidate 20** as the strongest final version. It best balanced UI quality, AI-themed humor, documentation, sound effects, live activity feed functionality, and overall completeness.
 
 ## Token Usage
 
-We used codex two diffrent ways (The application and cli). We noticed when we used the app, it took a longer time which also used
-more tokens in result. But when we used the codex via cli, it used less tokens and yielded us a shorter time. 
+We used both the codex application and cli for this assignment. We noticied that when we used the application, it took a longer wall time and also used more tokens compared to when we used the cli. 
