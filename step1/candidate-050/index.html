@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tug-O-War</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel">
+        <p class="eyebrow">SATIRE MODE: ENABLED</p>
+        <h1>Token Tug-O-War</h1>
+        <p class="intro">
+          Pull the lever, win synthetic glory, and immediately spend it all on
+          premium nonsense. The house always wins because the house is a
+          subscription plan.
+        </p>
+
+        <div class="status-grid">
+          <article class="status-card">
+            <span class="status-label">Wallet</span>
+            <strong id="tokenBalance">1200</strong>
+            <span class="status-note">tokens you can definitely justify</span>
+          </article>
+          <article class="status-card">
+            <span class="status-label">Spin Cost</span>
+            <strong id="spinCost">75</strong>
+            <span class="status-note">charged for “reasoning effort”</span>
+          </article>
+          <article class="status-card">
+            <span class="status-label">Jackpot</span>
+            <strong>900</strong>
+            <span class="status-note">enough for 3 ambitious prompts</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-panel">
+        <div class="machine-top">
+          <div>
+            <p class="machine-title">Inference Casino</p>
+            <p class="machine-subtitle">
+              99.9% uptime, 0% respect for your budget
+            </p>
+          </div>
+          <button id="muteButton" class="ghost-button" type="button" aria-pressed="false">
+            Sound: On
+          </button>
+        </div>
+
+        <div class="machine-frame" aria-live="polite">
+          <div class="reel-window">
+            <div class="reel" data-reel="0">
+              <span class="symbol">404</span>
+            </div>
+            <div class="reel" data-reel="1">
+              <span class="symbol">GPU</span>
+            </div>
+            <div class="reel" data-reel="2">
+              <span class="symbol">LOL</span>
+            </div>
+          </div>
+          <div class="machine-glow" aria-hidden="true"></div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">
+            Spend 75 Tokens
+          </button>
+          <button id="resetButton" class="ghost-button" type="button">
+            Reset Wallet
+          </button>
+        </div>
+
+        <p id="resultMessage" class="result-message">
+          Ready to transform fiscal responsibility into probability.
+        </p>
+
+        <div class="payouts">
+          <div class="payout-row">
+            <span>3x `MOAT`</span>
+            <span>+900 tokens</span>
+          </div>
+          <div class="payout-row">
+            <span>3x matching symbols</span>
+            <span>+400 tokens</span>
+          </div>
+          <div class="payout-row">
+            <span>2x matching symbols</span>
+            <span>+120 tokens</span>
+          </div>
+          <div class="payout-row">
+            <span>`404` anywhere</span>
+            <span>+40 sympathy tokens</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <template id="toastTemplate">
+      <div class="toast"></div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

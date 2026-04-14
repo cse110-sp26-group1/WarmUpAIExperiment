@@ -1,0 +1,359 @@
+:root {
+  color-scheme: light;
+  --bg: #f5efe2;
+  --bg-deep: #ead8b5;
+  --panel: rgba(253, 249, 238, 0.86);
+  --panel-strong: #fffaf0;
+  --text: #21160f;
+  --muted: #6f5a4b;
+  --accent: #c44827;
+  --accent-strong: #932d1b;
+  --gold: #e2a329;
+  --green: #21745e;
+  --border: rgba(33, 22, 15, 0.12);
+  --shadow: 0 24px 70px rgba(88, 41, 18, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(196, 72, 39, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(33, 116, 94, 0.2), transparent 26%),
+    linear-gradient(135deg, var(--bg), #f2dfb7 52%, var(--bg-deep));
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(10px);
+}
+
+body::before {
+  width: 18rem;
+  height: 18rem;
+  top: 5%;
+  right: 8%;
+  background: rgba(226, 163, 41, 0.15);
+}
+
+body::after {
+  width: 15rem;
+  height: 15rem;
+  bottom: 8%;
+  left: 4%;
+  background: rgba(33, 116, 94, 0.14);
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero,
+.machine-panel,
+.side-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  padding: 1rem 0 0.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: "Iowan Old Style", "Book Antiqua", "Palatino Linotype", serif;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  line-height: 0.94;
+  max-width: 10ch;
+}
+
+.hero-copy,
+.panel-copy,
+.status-banner,
+.stat-note {
+  color: var(--muted);
+}
+
+.hero-copy {
+  margin: 1rem 0 0;
+  max-width: 58ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.machine-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stat-card,
+.panel-card,
+.machine-frame {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.stat-card,
+.panel-card {
+  border-radius: 24px;
+  padding: 1.1rem 1.2rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.stat-value {
+  display: block;
+  margin: 0.35rem 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.machine-frame {
+  border-radius: 34px;
+  padding: 1.2rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.65), rgba(255, 250, 240, 0.88)),
+    linear-gradient(135deg, rgba(226, 163, 41, 0.15), rgba(196, 72, 39, 0.08));
+}
+
+.machine-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reel-window {
+  position: relative;
+  min-height: 220px;
+  padding: 0.8rem;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #fdf1d8, #fff9ee 48%, #f5e5c3);
+  border: 1px solid rgba(33, 22, 15, 0.12);
+  overflow: hidden;
+}
+
+.reel-window::after {
+  content: "";
+  position: absolute;
+  inset: calc(50% - 48px) 10px;
+  border-radius: 22px;
+  border: 2px dashed rgba(196, 72, 39, 0.28);
+  pointer-events: none;
+}
+
+.reel-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transform: translateY(0);
+}
+
+.symbol {
+  min-height: 90px;
+  border-radius: 22px;
+  padding: 0.85rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: var(--panel-strong);
+  border: 1px solid rgba(33, 22, 15, 0.08);
+  box-shadow: inset 0 -6px 12px rgba(196, 72, 39, 0.05);
+}
+
+.symbol-emoji {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 0.35rem;
+}
+
+.symbol-name {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.symbol-flavor {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.action-button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.35rem;
+  font: inherit;
+  font-weight: 700;
+  background: #ead8b5;
+  color: var(--text);
+  box-shadow: 0 10px 24px rgba(33, 22, 15, 0.12);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.action-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(33, 22, 15, 0.15);
+}
+
+.action-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.action-button.primary {
+  background: linear-gradient(135deg, var(--accent), #d76b29);
+  color: #fff8f0;
+}
+
+.action-button.ghost {
+  background: linear-gradient(135deg, #dbe6cb, #b8d5ba);
+}
+
+.status-banner {
+  margin: 0;
+  min-height: 1.6em;
+  font-size: 1rem;
+}
+
+.status-banner.is-win {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.status-banner.is-loss {
+  color: var(--accent-strong);
+}
+
+.side-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.payout-list,
+.upgrade-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.payout-item,
+.upgrade-item {
+  border-radius: 18px;
+  padding: 0.85rem 0.95rem;
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid rgba(33, 22, 15, 0.08);
+}
+
+.payout-row,
+.upgrade-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.item-title {
+  font-weight: 700;
+}
+
+.item-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.flash {
+  animation: jackpotFlash 600ms ease-in-out 2;
+}
+
+@keyframes jackpotFlash {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: var(--shadow);
+  }
+  50% {
+    transform: scale(1.015);
+    box-shadow: 0 0 0 6px rgba(226, 163, 41, 0.3), var(--shadow);
+  }
+}
+
+@media (max-width: 860px) {
+  .stats-grid,
+  .side-panel,
+  .reels {
+    grid-template-columns: 1fr;
+  }
+
+  .machine-topline,
+  .payout-row,
+  .upgrade-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
