@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Token Extractor 3000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="machine-shell">
+    <section class="machine" aria-labelledby="title">
+      <!-- Header copy sells the joke: you spend tokens and hope the AI gives value back. -->
+      <p class="eyebrow">Totally Fair Generative Gambling</p>
+      <h1 id="title">AI Token Extractor 3000</h1>
+      <p class="subtitle">
+        Feed the model tokens. Pray it returns something more useful than "Here are 12 bullet points."
+      </p>
+
+      <!-- Simple counters keep the game loop readable without extra UI clutter. -->
+      <div class="scoreboard" aria-label="Token counters">
+        <article class="stat-card">
+          <span class="stat-label">Your Tokens</span>
+          <strong class="stat-value" id="tokenBalance">120</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Spin Cost</span>
+          <strong class="stat-value">15</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Last Payout</span>
+          <strong class="stat-value" id="lastPayout">0</strong>
+        </article>
+      </div>
+
+      <!-- Each reel window is populated by JavaScript with a scrolling strip of symbols. -->
+      <section class="slot-panel" aria-label="Slot machine reels">
+        <div class="reel-frame">
+          <div class="reel-window" id="reelWindow1"></div>
+        </div>
+        <div class="reel-frame">
+          <div class="reel-window" id="reelWindow2"></div>
+        </div>
+        <div class="reel-frame">
+          <div class="reel-window" id="reelWindow3"></div>
+        </div>
+      </section>
+
+      <!-- Primary controls: spin to play, reset to restore the starting balance. -->
+      <div class="actions">
+        <button id="spinButton" type="button">Spend Tokens</button>
+        <button id="resetButton" type="button" class="ghost-button">Reset Wallet</button>
+      </div>
+
+      <p class="message" id="message" aria-live="polite">
+        Three matching symbols means the AI accidentally shipped a useful answer.
+      </p>
+
+      <!-- The payout table makes the joke legible and explains the scoring at a glance. -->
+      <section class="payouts" aria-labelledby="payoutTitle">
+        <h2 id="payoutTitle">Payout Table</h2>
+        <ul>
+          <li><span>3x Jackpot.json</span><strong>+140 tokens</strong></li>
+          <li><span>3x Hallucination</span><strong>+65 tokens</strong></li>
+          <li><span>3x GPU Fan</span><strong>+45 tokens</strong></li>
+          <li><span>Any pair</span><strong>+20 tokens</strong></li>
+          <li><span>No match</span><strong>0 tokens and mild regret</strong></li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
