@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tugger 3000</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Totally enterprise-ready amusement software</p>
+        <h1>Token Tugger 3000</h1>
+        <p class="hero-copy">
+          Spin the reels, farm synthetic glory, and immediately burn it all on
+          premium AI nonsense. Just like the industry intended.
+        </p>
+      </section>
+
+      <section class="machine-panel">
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-label">Wallet</span>
+            <strong class="stat-value" id="tokenBalance">250</strong>
+            <span class="stat-note">tokens available for questionable ideas</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Last Payout</span>
+            <strong class="stat-value" id="lastPayout">0</strong>
+            <span class="stat-note">the market currently believes in you</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Spend Level</span>
+            <strong class="stat-value" id="spendLevel">Seed Stage</strong>
+            <span class="stat-note">how aggressively you monetize vibes</span>
+          </article>
+        </div>
+
+        <div class="machine-frame">
+          <div class="machine-topline">
+            <span>Three matching symbols wins</span>
+            <span id="costDisplay">Spin Cost: 25 tokens</span>
+          </div>
+
+          <div class="reels" aria-label="Slot machine reels">
+            <div class="reel-window">
+              <div class="reel-strip" id="reel0" aria-live="polite"></div>
+            </div>
+            <div class="reel-window">
+              <div class="reel-strip" id="reel1" aria-live="polite"></div>
+            </div>
+            <div class="reel-window">
+              <div class="reel-strip" id="reel2" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button id="spinButton" class="action-button primary">Spin Prompt</button>
+            <button id="turboButton" class="action-button">Deploy Bigger Model</button>
+            <button id="spendButton" class="action-button ghost">Waste Tokens</button>
+          </div>
+
+          <p class="status-banner" id="statusBanner">
+            Welcome, founder. Please convert pretend demand into pretend value.
+          </p>
+        </div>
+      </section>
+
+      <section class="side-panel">
+        <article class="panel-card">
+          <h2>Payout Table</h2>
+          <ul class="payout-list" id="payoutList"></ul>
+        </article>
+
+        <article class="panel-card">
+          <h2>Token Sink</h2>
+          <p class="panel-copy">
+            Spend tokens on unnecessary upgrades that sound suspiciously like a
+            product roadmap.
+          </p>
+          <ul class="upgrade-list" id="upgradeList"></ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

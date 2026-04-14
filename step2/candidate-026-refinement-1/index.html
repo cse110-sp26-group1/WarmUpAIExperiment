@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Hallucination Casino</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <!-- Intro copy frames the joke before the machine UI starts. -->
+      <section class="hero">
+        <p class="eyebrow">Vanilla Web Slot Machine</p>
+        <h1>Token Hallucination Casino</h1>
+        <p class="hero-copy">
+          Feed the model tokens. Pull the lever. Watch the machine invent value,
+          confidence, and occasional nonsense.
+        </p>
+      </section>
+
+      <!-- Main machine layout: bank, reels, feedback, controls, and payouts. -->
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="machine-top">
+          <div class="bank-panel">
+            <span class="panel-label">Your Tokens</span>
+            <strong id="token-count" class="panel-value">120</strong>
+          </div>
+          <div class="bank-panel">
+            <span class="panel-label">Spin Cost</span>
+            <strong id="spin-cost" class="panel-value">15</strong>
+          </div>
+          <div class="bank-panel">
+            <span class="panel-label">Streak Bonus</span>
+            <strong id="streak-bonus" class="panel-value">x1</strong>
+          </div>
+        </div>
+
+        <div class="reels" role="group" aria-label="Slot machine reels">
+          <div class="reel-frame">
+            <div class="reel-window">
+              <div id="reel-0" class="reel-strip" aria-live="polite" aria-label="Reel 1"></div>
+            </div>
+          </div>
+          <div class="reel-frame">
+            <div class="reel-window">
+              <div id="reel-1" class="reel-strip" aria-live="polite" aria-label="Reel 2"></div>
+            </div>
+          </div>
+          <div class="reel-frame">
+            <div class="reel-window">
+              <div id="reel-2" class="reel-strip" aria-live="polite" aria-label="Reel 3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-board">
+          <p id="headline" class="headline">Ready to convert funding into latency.</p>
+          <p id="subhead" class="subhead">
+            Three matching symbols means the AI accidentally shipped value.
+          </p>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Spend Tokens
+          </button>
+          <button id="reset-button" class="secondary-button" type="button">
+            Reset Runway
+          </button>
+        </div>
+
+        <div class="legend" aria-label="Payout table">
+          <article class="legend-card">
+            <span class="legend-symbol">🪙🪙🪙</span>
+            <strong>+90 tokens</strong>
+            <p>Actual revenue. Investors become unbearable.</p>
+          </article>
+          <article class="legend-card">
+            <span class="legend-symbol">🤖🤖🤖</span>
+            <strong>+70 tokens</strong>
+            <p>Pure confidence with no citations.</p>
+          </article>
+          <article class="legend-card">
+            <span class="legend-symbol">Any 2 match</span>
+            <strong>+25 tokens</strong>
+            <p>Viral demo clip. Product still unclear.</p>
+          </article>
+          <article class="legend-card">
+            <span class="legend-symbol">404 combo</span>
+            <strong>-morale</strong>
+            <p>The model used all your tokens to summarize itself.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toasts are cloned from this template so the DOM stays simple. -->
+    <template id="toast-template">
+      <div class="toast" role="status" aria-live="polite"></div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
