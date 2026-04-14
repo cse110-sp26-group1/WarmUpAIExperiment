@@ -2,7 +2,7 @@
 
 ### Our top choice and why we picked it:
 
-Candidate 20 was our top choice. This is because it had a better UI in terms of the "sell souls" option where you gain more tokens if you run out.
+Candidate **20** was our top choice. This is because it had a better UI in terms of the "sell souls" option where you gain more tokens if you run out.
 
 ### Other notes
 
