@@ -1,3 +1,11 @@
+/*
+  File: styles.css
+  Purpose: Provides the visual system, layout, animation, and responsive behavior for the
+  Prompt & Circumstance Casino interface.
+  Notes: Styles cover the existing slot machine experience and the added slot-history section
+  so the satirical tone and visual language remain consistent across the page.
+*/
+
 :root {
   /* Shared palette for the neon-casino sci-fi look. */
   color-scheme: dark;
@@ -91,6 +99,7 @@ button:disabled {
 
 .hero-panel,
 .machine-shell,
+.history-panel,
 .metric-card,
 .side-panel,
 .reel-zone,
@@ -100,7 +109,8 @@ button:disabled {
 }
 
 .hero-panel,
-.machine-shell {
+.machine-shell,
+.history-panel {
   position: relative;
   overflow: hidden;
   border-radius: 30px;
@@ -117,6 +127,16 @@ button:disabled {
     linear-gradient(140deg, rgba(244, 201, 93, 0.12), transparent 34%),
     linear-gradient(320deg, rgba(99, 227, 255, 0.08), transparent 40%),
     var(--panel);
+}
+
+.history-panel {
+  margin-top: 1.4rem;
+  padding: 1.6rem;
+  background:
+    linear-gradient(135deg, rgba(99, 227, 255, 0.08), transparent 32%),
+    linear-gradient(315deg, rgba(244, 201, 93, 0.08), transparent 36%),
+    var(--panel);
+  backdrop-filter: blur(20px);
 }
 
 .eyebrow,
@@ -215,6 +235,59 @@ button:disabled {
 
 .machine-header h2 {
   font-size: clamp(2.3rem, 5vw, 4rem);
+}
+
+.history-heading h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 4.4vw, 3.3rem);
+  margin: 0.15rem 0 0;
+}
+
+.history-intro {
+  max-width: 52rem;
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.history-card {
+  border-radius: 24px;
+  padding: 1.15rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent),
+    rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.history-card h3 {
+  margin: 0.35rem 0 0.6rem;
+  font-size: 1.25rem;
+}
+
+.history-card p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.history-era {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
 }
 
 .house-note {
@@ -629,7 +702,8 @@ button:disabled {
   }
 
   .hero-panel,
-  .machine-shell {
+  .machine-shell,
+  .history-panel {
     border-radius: 24px;
   }
 
