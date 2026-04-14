@@ -1,0 +1,132 @@
+<!--
+  File: index.html
+  Purpose: Defines the Token Tilter 3000 interface, including the hero banner,
+  playable slot machine, live event feed, and the new slot game history panel.
+  Notes: This document keeps the existing game structure intact and adds
+  supporting content that matches the app's AI-satire theme.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tilter 3000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Satirical Productivity Casino</p>
+        <h1>Token Tilter 3000</h1>
+        <p class="intro">
+          Win synthetic glory, spend premium tokens, and discover whether your
+          bankroll survives the next "minor" model upgrade.
+        </p>
+
+        <div class="status-grid" aria-label="Game status">
+          <article class="status-panel">
+            <span class="label">Wallet</span>
+            <strong id="tokenBalance">1200</strong>
+            <span class="hint">freshly invoiced tokens</span>
+          </article>
+          <article class="status-panel">
+            <span class="label">Spin Cost</span>
+            <strong id="spinCost">90</strong>
+            <span class="hint">per emotionally risky pull</span>
+          </article>
+          <article class="status-panel">
+            <span class="label">Jackpot</span>
+            <strong id="jackpotValue">1500</strong>
+            <span class="hint">plus one unhelpful benchmark chart</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-card" aria-labelledby="machineTitle">
+        <div class="machine-topper">
+          <div>
+            <p class="eyebrow">Prompt-Powered Revenue Engine</p>
+            <h2 id="machineTitle">Pull For Tokens</h2>
+          </div>
+          <div class="lights" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="reels-frame">
+          <div class="reels" aria-live="polite">
+            <div class="reel" id="reel0">&#129302;</div>
+            <div class="reel" id="reel1">&#129689;</div>
+            <div class="reel" id="reel2">&#128200;</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">
+            Burn Tokens
+          </button>
+          <button id="boostButton" class="ghost-button" type="button">
+            Buy "Pro" Spin
+          </button>
+        </div>
+
+        <p id="message" class="message">
+          Your AI startup has pivoted to gambling. Investors call this synergy.
+        </p>
+
+        <div class="payouts">
+          <h3>Payout Lore</h3>
+          <ul>
+            <li><span>&#129689; &#129689; &#129689;</span><strong>+1500 tokens</strong></li>
+            <li><span>&#129302; &#129302; &#129302;</span><strong>+650 tokens</strong></li>
+            <li><span>&#128200; &#128200; &#128200;</span><strong>+400 tokens</strong></li>
+            <li><span>Three matching anything</span><strong>+250 tokens</strong></li>
+            <li><span>Two matching</span><strong>refund therapy only</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="feed-card">
+        <div class="feed-header">
+          <p class="eyebrow">Live Platform Feed</p>
+          <h2>Executive Commentary</h2>
+        </div>
+        <ul id="eventFeed" class="event-feed" aria-live="polite"></ul>
+
+        <section class="history-panel" aria-labelledby="historyTitle">
+          <div class="history-header">
+            <p class="eyebrow">Casino Backstory</p>
+            <h3 id="historyTitle">Slot Game History</h3>
+          </div>
+          <p class="history-intro">
+            Slot machines started as mechanical chance devices and evolved into
+            digital systems optimized for spectacle, metrics, and relentless
+            engagement. Token Tilter 3000 simply adds AI jargon to the same old
+            business model.
+          </p>
+          <div id="historyTimeline" class="history-timeline" aria-live="polite"></div>
+        </section>
+      </aside>
+    </main>
+
+    <template id="feedItemTemplate">
+      <li class="feed-item"></li>
+    </template>
+
+    <template id="historyItemTemplate">
+      <article class="history-item">
+        <p class="history-year"></p>
+        <h4 class="history-name"></h4>
+        <p class="history-copy"></p>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
