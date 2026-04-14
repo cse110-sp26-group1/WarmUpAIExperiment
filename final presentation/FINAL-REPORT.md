@@ -123,4 +123,4 @@ After multiple rounds of refinement, we selected **Candidate 20** as the stronge
 
 ## Token Usage
 
-We used both the codex application and cli for this assignment. We noticied that when we used the application, it took a longer wall time and also used more tokens compared to when we used the cli. 
+We used both the codex application and cli for this assignment. We noticied that when we used the application, it took a longer wall time and also used more tokens compared to when we used the cli.
