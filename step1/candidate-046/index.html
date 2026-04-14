@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burner 9000</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">SATIRICAL TOKEN ECONOMY SIMULATOR</p>
+        <h1>Token Burner 9000</h1>
+        <p class="tagline">
+          Spin the reels, win a few shiny AI tokens, and immediately spend them
+          on unnecessary “reasoning”.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="slot machine">
+        <div class="machine-top">
+          <div class="ledger">
+            <div class="stat">
+              <span class="label">Wallet</span>
+              <strong id="token-balance">150</strong>
+            </div>
+            <div class="stat">
+              <span class="label">Spin Cost</span>
+              <strong>15</strong>
+            </div>
+            <div class="stat">
+              <span class="label">Last Payout</span>
+              <strong id="last-payout">0</strong>
+            </div>
+          </div>
+          <div class="controls">
+            <button id="spin-button" class="spin-button" type="button">
+              Spin For Insight
+            </button>
+            <button id="reset-button" class="ghost-button" type="button">
+              Raise Another Round
+            </button>
+          </div>
+        </div>
+
+        <div class="reels" aria-live="polite">
+          <div class="reel-frame"><div class="reel" id="reel-1">🤖</div></div>
+          <div class="reel-frame"><div class="reel" id="reel-2">🪙</div></div>
+          <div class="reel-frame"><div class="reel" id="reel-3">🔥</div></div>
+        </div>
+
+        <div class="payline-hint">Three of a kind means the hype cycle paid you.</div>
+
+        <section class="event-panel">
+          <div class="message-card">
+            <h2>Status Feed</h2>
+            <p id="message">
+              Welcome back, founder. Your runway is measured in tokens and vibes.
+            </p>
+          </div>
+          <div class="message-card">
+            <h2>Suspicious Spending</h2>
+            <ul id="expense-list" class="expense-list" aria-live="polite"></ul>
+          </div>
+        </section>
+
+        <section class="paytable" aria-label="payout guide">
+          <h2>Token Logic</h2>
+          <div class="paytable-grid">
+            <article>
+              <span class="combo">🪙 🪙 🪙</span>
+              <p>Jackpot. Pure token extraction.</p>
+              <strong>+120</strong>
+            </article>
+            <article>
+              <span class="combo">🤖 🤖 🤖</span>
+              <p>The chatbot says “absolutely” with confidence.</p>
+              <strong>+90</strong>
+            </article>
+            <article>
+              <span class="combo">📈 📈 📈</span>
+              <p>Someone added “AI-powered” to the pitch deck.</p>
+              <strong>+70</strong>
+            </article>
+            <article>
+              <span class="combo">Any 2 match</span>
+              <p>Enough buzzwords to close a seed round.</p>
+              <strong>+25</strong>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <template id="expense-template">
+      <li class="expense-item">
+        <span class="expense-name"></span>
+        <strong class="expense-cost"></strong>
+      </li>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

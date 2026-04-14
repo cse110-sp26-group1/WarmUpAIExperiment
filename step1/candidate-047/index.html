@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Extractor 3000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Synthetic Luck Simulator</p>
+        <h1>Token Extractor 3000</h1>
+        <p class="tagline">
+          Spin the reels, win imaginary AI tokens, then immediately spend them on
+          premium nonsense.
+        </p>
+      </section>
+
+      <section class="machine" aria-labelledby="machine-title">
+        <div class="machine-top">
+          <div>
+            <p class="panel-label">Status</p>
+            <h2 id="machine-title">Model Alignment Casino</h2>
+          </div>
+          <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true">
+            Sound: On
+          </button>
+        </div>
+
+        <div class="stats" aria-label="Game stats">
+          <article class="stat-card">
+            <p class="panel-label">Wallet</p>
+            <p class="stat-value" id="tokenBalance">120</p>
+            <p class="stat-note">tokens left to burn</p>
+          </article>
+          <article class="stat-card">
+            <p class="panel-label">Cost Per Spin</p>
+            <p class="stat-value">15</p>
+            <p class="stat-note">plus your dignity</p>
+          </article>
+          <article class="stat-card">
+            <p class="panel-label">Total Spins</p>
+            <p class="stat-value" id="spinCount">0</p>
+            <p class="stat-note">engagement events</p>
+          </article>
+        </div>
+
+        <div class="reels-frame">
+          <div class="reels" aria-live="polite" aria-atomic="true">
+            <div class="reel" id="reel0">PROMPT</div>
+            <div class="reel" id="reel1">GPU</div>
+            <div class="reel" id="reel2">HYPE</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="spin-button" id="spinButton" type="button">Spin For Tokens</button>
+          <button class="cashout-button" id="cashoutButton" type="button">
+            Spend Tokens
+          </button>
+        </div>
+
+        <p class="message" id="message">
+          Welcome, valued user. Please convert whimsy into metrics.
+        </p>
+
+        <section class="shop" aria-labelledby="shop-title">
+          <div class="shop-header">
+            <div>
+              <p class="panel-label">Token Sink</p>
+              <h3 id="shop-title">AI Luxury Store</h3>
+            </div>
+            <p class="shop-copy">Every purchase is less useful than the last.</p>
+          </div>
+
+          <div class="shop-items">
+            <button class="shop-item" data-cost="20" data-item="One extra benchmark chart nobody asked for">
+              <span>Benchmark Chart</span>
+              <strong>20 tokens</strong>
+            </button>
+            <button class="shop-item" data-cost="35" data-item="A vibe-coded roadmap with zero dates">
+              <span>Vibe Roadmap</span>
+              <strong>35 tokens</strong>
+            </button>
+            <button class="shop-item" data-cost="50" data-item="Priority access to the hallucination lounge">
+              <span>Hallucination Lounge</span>
+              <strong>50 tokens</strong>
+            </button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An AI-themed slot machine where you gamble tokens against the algorithm."
+    />
+    <title>Token Tug-O-War</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Humanity's Least Necessary Casino</p>
+        <h1>Token Tug-O-War</h1>
+        <p class="lede">
+          Spin the reels, hoard shiny AI tokens, and pay the machine for
+          “premium intelligence” it absolutely made up five seconds ago.
+        </p>
+
+        <div class="stats-grid" aria-label="Game stats">
+          <article class="stat-card">
+            <span class="stat-label">Your Tokens</span>
+            <strong class="stat-value" id="tokenCount">120</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Spin Cost</span>
+            <strong class="stat-value" id="spinCost">15</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Last Payout</span>
+            <strong class="stat-value" id="lastPayout">0</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-card" aria-label="Slot machine">
+        <div class="machine-topper">
+          <p class="machine-title">Prompt-Powered Profit Extractor</p>
+          <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true">
+            Sound: On
+          </button>
+        </div>
+
+        <div class="reels-frame" role="img" aria-label="Three slot machine reels">
+          <div class="reel-window">
+            <span class="reel-symbol" id="reel0">🤖</span>
+          </div>
+          <div class="reel-window">
+            <span class="reel-symbol" id="reel1">🪙</span>
+          </div>
+          <div class="reel-window">
+            <span class="reel-symbol" id="reel2">📉</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <label class="bet-picker" for="betSelect">
+            Bet Size
+            <select id="betSelect">
+              <option value="10">10 tokens</option>
+              <option value="15" selected>15 tokens</option>
+              <option value="25">25 tokens</option>
+              <option value="40">40 tokens</option>
+            </select>
+          </label>
+
+          <button class="spin-button" id="spinButton" type="button">
+            Spin the Hype Cycle
+          </button>
+          <button class="reload-button" id="reloadButton" type="button">
+            Beg for More Tokens
+          </button>
+        </div>
+
+        <div class="message-board" aria-live="polite">
+          <p class="message-title">Machine Commentary</p>
+          <p class="message-text" id="messageText">
+            Welcome, organic life form. Please convert your self-worth into tokens.
+          </p>
+        </div>
+
+        <ul class="payout-list" aria-label="Payout guide">
+          <li>3 matching symbols: 6x your bet</li>
+          <li>2 matching symbols: 2x your bet</li>
+          <li>3 tokens anywhere: bonus 10x your bet</li>
+          <li>3 outages: the machine apologizes with 1 token</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
