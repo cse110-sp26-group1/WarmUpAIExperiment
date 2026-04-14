@@ -1,0 +1,6 @@
+This is the previous prompt as context: 
+"Create a slot machine app that uses vanilla web technology like HTML, CSS, 
+JavaScript, and platform APIs. The slot machine should make fun of AI, as in 
+you are winning tokens and spending tokens." Add a visual slot machine pulling lever
+instead of the button with text. Redo the entire UI color theme to red, gold, and black. 
+Think like a product manager and code like a senior engineer. Ensure you maintain current functionality. Make no mistakes.
